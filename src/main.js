@@ -1,4 +1,4 @@
-const Apify = require('apify');
+const { Actor } = require('apify');
 const { chromium } = require('playwright');
 
 // Brand and model mapping (this would need to be expanded based on the actual site)
@@ -18,10 +18,10 @@ const MODEL_MAP = {
     // Add more brand/model mappings as needed
 };
 
-Apify.main(async () => {
+Actor.main(async () => {
     console.log('Starting Carzilla.de scraper...');
 
-    const input = await Apify.getInput();
+    const input = await Actor.getInput();
     console.log('Input parameters:', input);
 
     // Default parameters if none provided
@@ -75,7 +75,7 @@ Apify.main(async () => {
         console.log(`Total cars scraped: ${results.length}`);
 
         // Save results
-        await Apify.pushData({
+        await Actor.pushData({
             items: results,
             total: results.length.toString(),
             max_pages: maxPages,
