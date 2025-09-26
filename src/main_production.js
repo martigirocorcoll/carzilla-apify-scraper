@@ -206,19 +206,23 @@ async function extractCarListings(page, options = {}) {
                     car.description = fullTitle.replace(car.make, '').trim();
                 }
 
-                // Extract price
-                const priceElement = element.querySelector('*');
-                if (priceElement) {
-                    const allText = element.textContent;
-                    // Look for price patterns like "35.000 €" or "35000 €"
-                    const priceMatch = allText.match(/([\\d]{1,3}(?:\\.[\\d]{3})*)\\s*€/g);
-                    if (priceMatch) {
-                        // Get the largest price (likely the main price, not monthly rate)
-                        const prices = priceMatch.map(p => parseInt(p.replace(/[^\\d]/g, '')));
+                // Extract price - German format handling
+                const allText = element.textContent;
+
+                // Look for price patterns like "35.000 €", "35000 €", "45.990 €"
+                const priceMatches = allText.match(/([\\d]{1,3}(?:\\.[\\d]{3})*)\\s*€/g);
+                if (priceMatches) {
+                    const prices = priceMatches.map(priceStr => {
+                        // Remove € symbol and spaces
+                        const numStr = priceStr.replace(/[€\\s]/g, '');
+                        // Handle German thousand separator: 35.000 → 35000
+                        return parseInt(numStr.replace(/\\./g, ''));
+                    }).filter(price => !isNaN(price) && price > 1000); // Only valid car prices
+
+                    if (prices.length > 0) {
+                        // Get the largest price (main price, not monthly payments)
                         const mainPrice = Math.max(...prices);
-                        if (mainPrice > 1000) { // Reasonable car price
-                            car.price_bruto = mainPrice.toString();
-                        }
+                        car.price_bruto = mainPrice.toString();
                     }
                 }
 

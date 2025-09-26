@@ -4,21 +4,29 @@
 const { BRAND_MAP, MODEL_MAP } = require('../final_complete_mappings.js');
 
 const FUEL_TYPE_MAPPING = {
-    'Gasolina': 'mt-1',              // Benzin checkbox
-    'Diésel': 'mt-2',                // Diesel checkbox
-    'Gas de automoción': 'mt-3',     // Gas checkbox
-    'Gas natural': 'mt-8',           // Erdgas checkbox
-    'Eléctrico': 'mt-4',             // Elektro checkbox
-    'Híbrido (gasolina/eléctrico)': 'mt-5',   // Hybrid checkbox
-    'Hidrógeno': 'mt-12',            // Wasserstoff checkbox
+    'Gasolina': '1',                 // Benzin dropdown value
+    'Benzin': '1',                   // Benzin dropdown value (German)
+    'Diésel': '2',                   // Diesel dropdown value
+    'Diesel': '2',                   // Diesel dropdown value (German)
+    'Gas de automoción': '3',        // Gas dropdown value
+    'Gas natural': '8',              // Erdgas dropdown value
+    'Eléctrico': '4',                // Elektro dropdown value
+    'Elektro': '4',                  // Elektro dropdown value (German)
+    'Híbrido (gasolina/eléctrico)': '10',     // PlugIn Hybrid-Benzin
+    'Híbrido (diésel/eléctrico)': '11',       // PlugIn Hybrid-Diesel
+    'Hybrid': '5',                   // Standard Hybrid dropdown value
+    'Hidrógeno': '12',               // Wasserstoff dropdown value
     'Etanol (FFV,E85, etc.)': null,  // Not available on Carzilla
-    'Híbrido (diésel/eléctrico)': 'mt-9',     // Hybrid-Diesel checkbox
     'Otro': null                     // Not available on Carzilla
 };
 
 const TRANSMISSION_MAPPING = {
     'Manual': 'tm-1',                // Schaltgetriebe checkbox
-    'Automático': 'tm-2'             // Automatik checkbox
+    'manual': 'tm-1',                // Schaltgetriebe checkbox (lowercase)
+    'Schaltgetriebe': 'tm-1',        // Schaltgetriebe checkbox (German)
+    'Automático': 'tm-2',            // Automatik checkbox
+    'automatico': 'tm-2',            // Automatik checkbox (lowercase)
+    'Automatik': 'tm-2'              // Automatik checkbox (German)
     // Note: Carzilla also has 'tm-3' for Tiptronic
 };
 
@@ -86,27 +94,27 @@ function buildCarzillaURL(params) {
         // Carzilla uses dropdown values, find closest match
         const priceOptions = [1000, 5000, 10000, 15000, 20000, 30000, 45000, 60000, 75000, 100000, 150000];
         const closestMin = priceOptions.find(p => p >= parseInt(price_min)) || priceOptions[0];
-        url += `&price_from=${closestMin}`;
+        url += `&pf=${closestMin}`;
     }
 
     if (price_max) {
         const priceOptions = [1000, 5000, 10000, 15000, 20000, 30000, 45000, 60000, 75000, 100000, 150000];
-        const closestMax = priceOptions.reverse().find(p => p <= parseInt(price_max)) || priceOptions[priceOptions.length - 1];
-        url += `&price_to=${closestMax}`;
+        const closestMax = [...priceOptions].reverse().find(p => p <= parseInt(price_max)) || priceOptions[priceOptions.length - 1];
+        url += `&pt=${closestMax}`;
     }
 
     // Mileage (convert to kilometers if needed)
     if (mileage_max) {
         const mileageOptions = [0, 1000, 2000, 3000, 4000, 5000, 10000, 20000, 30000, 50000, 75000, 100000, 125000, 150000, 200000];
-        const closestMileage = mileageOptions.reverse().find(m => m <= parseInt(mileage_max)) || mileageOptions[mileageOptions.length - 1];
-        url += `&mileage_to=${closestMileage}`;
+        const closestMileage = [...mileageOptions].reverse().find(m => m <= parseInt(mileage_max)) || mileageOptions[mileageOptions.length - 1];
+        url += `&kt=${closestMileage}`;
     }
 
     // Registration year
     if (first_registration_date) {
         const year = parseInt(first_registration_date);
         if (year >= 1980 && year <= 2025) {
-            url += `&year_from=${year}`;
+            url += `&yf=${year}`;
         }
     }
 
@@ -120,26 +128,31 @@ function buildCarzillaURL(params) {
 
         const powerOptions = [40, 60, 80, 100, 150, 200, 300, 400, 500];
         const closestPower = powerOptions.find(p => p >= powerKW) || powerOptions[0];
-        url += `&power_from=${closestPower}`;
+        url += `&kwf=${closestPower}`;
     }
 
-    // Fuel type (will be handled via checkboxes in the scraper)
-    if (fuel && FUEL_TYPE_MAPPING[fuel]) {
-        url += `&fuel=${FUEL_TYPE_MAPPING[fuel]}`;
+    // Fuel type - support multiple values
+    if (fuel) {
+        const fuelTypes = Array.isArray(fuel) ? fuel : [fuel];
+        fuelTypes.forEach(fuelType => {
+            if (FUEL_TYPE_MAPPING[fuelType]) {
+                url += `&mt=${FUEL_TYPE_MAPPING[fuelType]}`;
+            }
+        });
     }
 
-    // Transmission (will be handled via checkboxes in the scraper)
+    // Transmission - add directly to URL as filter parameter
     if (transmision && TRANSMISSION_MAPPING[transmision]) {
-        url += `&transmission=${TRANSMISSION_MAPPING[transmision]}`;
+        url += `&f[]=${TRANSMISSION_MAPPING[transmision]}`;
     }
 
-    // 4x4 / All-wheel drive
+    // 4x4 / All-wheel drive - add directly to URL
     if (fourwheeldrive === "1") {
-        url += `&allrad=14`; // Allrad checkbox ID
+        url += `&f[]=14`; // Allrad checkbox ID
     }
 
     // Always add: 20 results per page, sorted by price ascending
-    url += '&rp=20&sf=prices.SalePrice.value';
+    url += '&rp=20&so=asc&sf=price';
 
     return url;
 }
@@ -148,16 +161,7 @@ function buildCarzillaURL(params) {
 function getCheckboxFilters(params) {
     const filters = [];
 
-    // Fuel type filters
-    if (params.fuel && FUEL_TYPE_MAPPING[params.fuel]) {
-        filters.push({
-            type: 'checkbox',
-            id: FUEL_TYPE_MAPPING[params.fuel],
-            name: 'fuel_type'
-        });
-    }
-
-    // Transmission filters
+    // Transmission filters (still checkboxes)
     if (params.transmision && TRANSMISSION_MAPPING[params.transmision]) {
         filters.push({
             type: 'checkbox',

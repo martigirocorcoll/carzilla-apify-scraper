@@ -74,20 +74,42 @@
                     "example": "2020"
                 },
                 "fuel": {
-                    "title": "Fuel Type",
-                    "type": "string",
-                    "description": "Fuel type filter",
-                    "enum": [
-                        "Gasolina",
-                        "Diésel",
-                        "Gas de automoción",
-                        "Gas natural",
-                        "Eléctrico",
-                        "Híbrido (gasolina/eléctrico)",
-                        "Hidrógeno",
-                        "Etanol (FFV,E85, etc.)",
-                        "Híbrido (diésel/eléctrico)",
-                        "Otro"
+                    "title": "Fuel Type(s)",
+                    "description": "Fuel type filter - can be single value or array of values",
+                    "oneOf": [
+                        {
+                            "type": "string",
+                            "enum": [
+                                "Gasolina",
+                                "Diésel",
+                                "Gas de automoción",
+                                "Gas natural",
+                                "Eléctrico",
+                                "Híbrido (gasolina/eléctrico)",
+                                "Hidrógeno",
+                                "Etanol (FFV,E85, etc.)",
+                                "Híbrido (diésel/eléctrico)",
+                                "Otro"
+                            ]
+                        },
+                        {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Gasolina",
+                                    "Diésel",
+                                    "Gas de automoción",
+                                    "Gas natural",
+                                    "Eléctrico",
+                                    "Híbrido (gasolina/eléctrico)",
+                                    "Hidrógeno",
+                                    "Etanol (FFV,E85, etc.)",
+                                    "Híbrido (diésel/eléctrico)",
+                                    "Otro"
+                                ]
+                            }
+                        }
                     ]
                 },
                 "potencia": {
