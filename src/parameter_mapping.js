@@ -114,7 +114,7 @@ function buildCarzillaURL(params) {
     if (first_registration_date) {
         const year = parseInt(first_registration_date);
         if (year >= 1980 && year <= 2025) {
-            url += `&yf=${year}`;
+            url += `&yfrom=${year}`;
         }
     }
 
