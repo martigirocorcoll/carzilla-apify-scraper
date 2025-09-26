@@ -238,4 +238,4 @@ async function extractCarListings(page) {
     });
 }
 
-module.exports = Apify;
+module.exports = Actor;
