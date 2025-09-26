@@ -1,6 +1,6 @@
 {
     "name": "carzilla-scraper",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Apify scraper for Carzilla.de car listings - Integration with importocoches.com",
     "main": "src/main_production.js",
     "scripts": {

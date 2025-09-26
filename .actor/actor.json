@@ -3,7 +3,7 @@
     "name": "carzilla-scraper",
     "title": "Carzilla.de Car Scraper",
     "description": "Scrapes car listings from Carzilla.de and returns them in UnifiedCar format for importocoches.com integration",
-    "version": "1.0",
+    "version": "1.1",
     "meta": {
         "templateId": "javascript-playwright"
     },
