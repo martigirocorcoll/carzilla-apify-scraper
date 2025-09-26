@@ -152,7 +152,7 @@ function buildCarzillaURL(params) {
     }
 
     // Always add: 20 results per page, sorted by price ascending
-    url += '&rp=20&so=asc&sf=price';
+    url += '&rp=20&sf=prices.SalePrice.value';
 
     return url;
 }

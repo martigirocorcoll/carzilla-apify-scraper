@@ -83,6 +83,7 @@ Actor.main(async () => {
 
     console.log('🔗 Search URL:', searchUrl);
     console.log('📊 URL includes: 20 results per page, sorted by price ascending');
+    console.log('🔍 URL for manual testing: ' + searchUrl);
 
     // Set up browser with timeout
     const browser = await chromium.launch({
@@ -120,6 +121,16 @@ Actor.main(async () => {
 
         // Wait for content to load
         await page.waitForTimeout(3000);
+
+        // Log page info for debugging
+        const pageInfo = await page.evaluate(() => {
+            return {
+                title: document.title,
+                currentUrl: window.location.href,
+                bodyText: document.body ? document.body.textContent.slice(0, 200) : 'No body found'
+            };
+        });
+        console.log('📄 Current page:', pageInfo);
 
         // Apply additional checkbox filters if needed
         const checkboxFilters = getCheckboxFilters({
