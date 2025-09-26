@@ -1,0 +1,480 @@
+{
+  "timestamp": "2025-09-26T15:12:39.862Z",
+  "brands": [
+    {
+      "id": "number:178",
+      "name": "Abarth"
+    },
+    {
+      "id": "number:1",
+      "name": "AC"
+    },
+    {
+      "id": "number:2",
+      "name": "Alfa Romeo"
+    },
+    {
+      "id": "number:73",
+      "name": "Alpina"
+    },
+    {
+      "id": "number:331",
+      "name": "Alpine"
+    },
+    {
+      "id": "number:4",
+      "name": "Aston Martin"
+    },
+    {
+      "id": "number:5",
+      "name": "Audi"
+    },
+    {
+      "id": "number:347",
+      "name": "Austin Healey"
+    },
+    {
+      "id": "number:235",
+      "name": "Baic"
+    },
+    {
+      "id": "number:8",
+      "name": "Bentley"
+    },
+    {
+      "id": "number:9",
+      "name": "BMW"
+    },
+    {
+      "id": "number:141",
+      "name": "BYD"
+    },
+    {
+      "id": "number:13",
+      "name": "Cadillac"
+    },
+    {
+      "id": "number:14",
+      "name": "Chevrolet"
+    },
+    {
+      "id": "number:15",
+      "name": "Chrysler"
+    },
+    {
+      "id": "number:16",
+      "name": "Citroen"
+    },
+    {
+      "id": "number:115",
+      "name": "Corvette"
+    },
+    {
+      "id": "number:238",
+      "name": "Cupra"
+    },
+    {
+      "id": "number:112",
+      "name": "Dacia"
+    },
+    {
+      "id": "number:17",
+      "name": "Daewoo"
+    },
+    {
+      "id": "number:19",
+      "name": "Daihatsu"
+    },
+    {
+      "id": "number:333",
+      "name": "DFM"
+    },
+    {
+      "id": "number:236",
+      "name": "DFSK"
+    },
+    {
+      "id": "number:20",
+      "name": "Dodge"
+    },
+    {
+      "id": "number:216",
+      "name": "DS Automobiles"
+    },
+    {
+      "id": "number:255",
+      "name": "e.GO"
+    },
+    {
+      "id": "number:21",
+      "name": "Ferrari"
+    },
+    {
+      "id": "number:22",
+      "name": "Fiat"
+    },
+    {
+      "id": "number:23",
+      "name": "Ford"
+    },
+    {
+      "id": "number:288",
+      "name": "Genesis"
+    },
+    {
+      "id": "number:354",
+      "name": "Glas"
+    },
+    {
+      "id": "number:351",
+      "name": "GWM"
+    },
+    {
+      "id": "number:25",
+      "name": "Honda"
+    },
+    {
+      "id": "number:26",
+      "name": "Hyundai"
+    },
+    {
+      "id": "number:289",
+      "name": "Ineos"
+    },
+    {
+      "id": "number:127",
+      "name": "Infiniti"
+    },
+    {
+      "id": "number:28",
+      "name": "Isuzu"
+    },
+    {
+      "id": "number:30",
+      "name": "Jaguar"
+    },
+    {
+      "id": "number:31",
+      "name": "Jeep"
+    },
+    {
+      "id": "number:368",
+      "name": "KGM"
+    },
+    {
+      "id": "number:32",
+      "name": "Kia"
+    },
+    {
+      "id": "number:33",
+      "name": "Lada"
+    },
+    {
+      "id": "number:34",
+      "name": "Lamborghini"
+    },
+    {
+      "id": "number:35",
+      "name": "Lancia"
+    },
+    {
+      "id": "number:36",
+      "name": "Land Rover"
+    },
+    {
+      "id": "number:362",
+      "name": "Leapmotor"
+    },
+    {
+      "id": "number:37",
+      "name": "Lexus"
+    },
+    {
+      "id": "number:281",
+      "name": "Lynk & Co"
+    },
+    {
+      "id": "number:107",
+      "name": "MAN"
+    },
+    {
+      "id": "number:40",
+      "name": "Maserati"
+    },
+    {
+      "id": "number:287",
+      "name": "Maxus"
+    },
+    {
+      "id": "number:41",
+      "name": "Mazda"
+    },
+    {
+      "id": "number:186",
+      "name": "McLaren"
+    },
+    {
+      "id": "number:42",
+      "name": "Mercedes-Benz"
+    },
+    {
+      "id": "number:44",
+      "name": "MG"
+    },
+    {
+      "id": "number:45",
+      "name": "MINI"
+    },
+    {
+      "id": "number:46",
+      "name": "Mitsubishi"
+    },
+    {
+      "id": "number:47",
+      "name": "Morgan"
+    },
+    {
+      "id": "number:48",
+      "name": "Nissan"
+    },
+    {
+      "id": "number:50",
+      "name": "Opel"
+    },
+    {
+      "id": "number:302",
+      "name": "Ora"
+    },
+    {
+      "id": "number:51",
+      "name": "Peugeot"
+    },
+    {
+      "id": "number:245",
+      "name": "Polestar"
+    },
+    {
+      "id": "number:54",
+      "name": "Porsche"
+    },
+    {
+      "id": "number:56",
+      "name": "Renault"
+    },
+    {
+      "id": "number:59",
+      "name": "Saab"
+    },
+    {
+      "id": "number:60",
+      "name": "Seat"
+    },
+    {
+      "id": "number:61",
+      "name": "Skoda"
+    },
+    {
+      "id": "number:62",
+      "name": "Smart"
+    },
+    {
+      "id": "number:78",
+      "name": "SSangYong"
+    },
+    {
+      "id": "number:63",
+      "name": "Subaru"
+    },
+    {
+      "id": "number:64",
+      "name": "Suzuki"
+    },
+    {
+      "id": "number:310",
+      "name": "SWM"
+    },
+    {
+      "id": "number:202",
+      "name": "Tesla"
+    },
+    {
+      "id": "number:66",
+      "name": "Toyota"
+    },
+    {
+      "id": "number:69",
+      "name": "Volkswagen"
+    },
+    {
+      "id": "number:70",
+      "name": "Volvo"
+    },
+    {
+      "id": "number:305",
+      "name": "WEY"
+    },
+    {
+      "id": "number:344",
+      "name": "XEV"
+    },
+    {
+      "id": "number:353",
+      "name": "XPENG"
+    }
+  ],
+  "brandModelMappings": {
+    "Abarth": {
+      "brandId": "number:178",
+      "models": [
+        {
+          "id": "6000102",
+          "name": "124 Spider"
+        },
+        {
+          "id": "19688",
+          "name": "500"
+        },
+        {
+          "id": "19689",
+          "name": "500C"
+        },
+        {
+          "id": "21170",
+          "name": "595"
+        },
+        {
+          "id": "20387",
+          "name": "595C"
+        },
+        {
+          "id": "6002014",
+          "name": "600e"
+        },
+        {
+          "id": "19690",
+          "name": "695"
+        },
+        {
+          "id": "20386",
+          "name": "695C"
+        }
+      ]
+    },
+    "AC": {
+      "brandId": "number:1",
+      "models": [
+        {
+          "id": "14984",
+          "name": "Cobra"
+        }
+      ]
+    },
+    "Alfa Romeo": {
+      "brandId": "number:2",
+      "models": [
+        {
+          "id": "16421",
+          "name": "147"
+        },
+        {
+          "id": "18681",
+          "name": "159"
+        },
+        {
+          "id": "19125",
+          "name": "8C"
+        },
+        {
+          "id": "18412",
+          "name": "GT"
+        },
+        {
+          "id": "18553",
+          "name": "Giulia"
+        },
+        {
+          "id": "1611",
+          "name": "Giulietta"
+        },
+        {
+          "id": "6001694",
+          "name": "Junior"
+        },
+        {
+          "id": "1614",
+          "name": "Spider"
+        },
+        {
+          "id": "6000182",
+          "name": "Stelvio"
+        },
+        {
+          "id": "6000951",
+          "name": "Tonale"
+        }
+      ]
+    },
+    "Alpina": {
+      "brandId": "number:73",
+      "models": [
+        {
+          "id": "15130",
+          "name": "B3"
+        },
+        {
+          "id": "6000032",
+          "name": "B4"
+        },
+        {
+          "id": "18601",
+          "name": "B5"
+        },
+        {
+          "id": "18346",
+          "name": "B7"
+        },
+        {
+          "id": "18717",
+          "name": "D3"
+        },
+        {
+          "id": "20490",
+          "name": "D4"
+        },
+        {
+          "id": "20129",
+          "name": "D5"
+        },
+        {
+          "id": "18544",
+          "name": "Roadster S"
+        },
+        {
+          "id": "6000736",
+          "name": "XB7"
+        },
+        {
+          "id": "100006",
+          "name": "XD3"
+        },
+        {
+          "id": "6000446",
+          "name": "XD4"
+        }
+      ]
+    },
+    "Alpine": {
+      "brandId": "number:331",
+      "models": [
+        {
+          "id": "6001825",
+          "name": "A 290"
+        },
+        {
+          "id": "6001365",
+          "name": "A110"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,137 @@
+{
+    "name": "carzilla-scraper",
+    "version": "1.0.0",
+    "buildTag": "latest",
+    "env": null,
+    "dockerfile": "./Dockerfile",
+    "readme": "./README.md",
+    "input": "./INPUT_SCHEMA.json",
+    "storages": {
+        "dataset": {
+            "name": "carzilla-results"
+        }
+    },
+    "actor": {
+        "title": "Carzilla.de Car Scraper",
+        "description": "Scrapes car listings from Carzilla.de for importocoches.com integration. Supports brand/model filtering, price ranges, mileage limits, and returns data in UnifiedCar format.",
+        "version": "1.0",
+        "meta": {
+            "templateId": "javascript-playwright"
+        },
+        "input": {
+            "title": "Carzilla.de Scraper Input",
+            "type": "object",
+            "schemaVersion": 1,
+            "properties": {
+                "make": {
+                    "title": "Car Brand",
+                    "type": "string",
+                    "description": "Car manufacturer (e.g., BMW, Mercedes-Benz, Audi)",
+                    "example": "BMW",
+                    "enum": [
+                        "Abarth", "Alfa Romeo", "Audi", "BMW", "Bentley", "BYD", "Citroen", "Cupra",
+                        "Dacia", "Fiat", "Ford", "Genesis", "Hyundai", "Jaguar", "Jeep", "Kia",
+                        "Lamborghini", "Land Rover", "Lexus", "Maserati", "Maxus", "Mazda",
+                        "Mercedes-Benz", "MG", "MINI", "Mitsubishi", "Nissan", "Opel", "Peugeot",
+                        "Polestar", "Porsche", "Renault", "Seat", "Skoda", "Smart", "SSangYong",
+                        "Subaru", "Suzuki", "Tesla", "Toyota", "Volkswagen", "Volvo", "XPENG"
+                    ]
+                },
+                "model": {
+                    "title": "Car Model",
+                    "type": "string",
+                    "description": "Specific car model (e.g., 320, 530, Model 3)",
+                    "example": "530"
+                },
+                "model_description": {
+                    "title": "Model Variant",
+                    "type": "string",
+                    "description": "Additional model description (e.g., xDrive, M-Sport)",
+                    "example": "xDrive"
+                },
+                "price_min": {
+                    "title": "Minimum Price (€)",
+                    "type": "string",
+                    "description": "Minimum price in euros",
+                    "example": "15000"
+                },
+                "price_max": {
+                    "title": "Maximum Price (€)",
+                    "type": "string",
+                    "description": "Maximum price in euros",
+                    "example": "50000"
+                },
+                "mileage_max": {
+                    "title": "Maximum Mileage (km)",
+                    "type": "string",
+                    "description": "Maximum mileage in kilometers",
+                    "example": "100000"
+                },
+                "first_registration_date": {
+                    "title": "Minimum Year",
+                    "type": "string",
+                    "description": "Minimum registration year (YYYY format)",
+                    "example": "2020"
+                },
+                "fuel": {
+                    "title": "Fuel Type",
+                    "type": "string",
+                    "description": "Fuel type filter",
+                    "enum": [
+                        "Gasolina",
+                        "Diésel",
+                        "Gas de automoción",
+                        "Gas natural",
+                        "Eléctrico",
+                        "Híbrido (gasolina/eléctrico)",
+                        "Hidrógeno",
+                        "Etanol (FFV,E85, etc.)",
+                        "Híbrido (diésel/eléctrico)",
+                        "Otro"
+                    ]
+                },
+                "potencia": {
+                    "title": "Minimum Power",
+                    "type": "string",
+                    "description": "Minimum power in kW (or CV, will be converted)",
+                    "example": "147"
+                },
+                "transmision": {
+                    "title": "Transmission Type",
+                    "type": "string",
+                    "description": "Transmission preference",
+                    "enum": ["Manual", "Automático"]
+                },
+                "fourwheeldrive": {
+                    "title": "4x4 / All-Wheel Drive",
+                    "type": "string",
+                    "description": "Filter for 4x4 vehicles (1 = only 4x4, 0 = all)",
+                    "enum": ["0", "1"]
+                },
+                "maxPages": {
+                    "title": "Maximum Pages",
+                    "type": "integer",
+                    "description": "Maximum number of pages to scrape",
+                    "default": 1,
+                    "minimum": 1,
+                    "maximum": 5
+                },
+                "headless": {
+                    "title": "Headless Mode",
+                    "type": "boolean",
+                    "description": "Run browser in headless mode",
+                    "default": true
+                },
+                "timeout": {
+                    "title": "Timeout (ms)",
+                    "type": "integer",
+                    "description": "Maximum execution time in milliseconds",
+                    "default": 20000,
+                    "minimum": 10000,
+                    "maximum": 60000
+                }
+            },
+            "required": ["make"]
+        }
+    }
+}

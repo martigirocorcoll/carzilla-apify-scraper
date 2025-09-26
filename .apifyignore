@@ -1,0 +1,33 @@
+# Files and directories to ignore when uploading to Apify
+
+# Documentation and testing files
+*.md
+4x4_documentation.md
+DEPLOYMENT_GUIDE.md
+
+# Test files
+test_*.js
+run_tests.js
+
+# Development files
+.git/
+.gitignore
+.env*
+*.log
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node modules will be installed during build
+node_modules/
+
+# Temporary files
+tmp/
+temp/

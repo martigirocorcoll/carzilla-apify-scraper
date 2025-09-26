@@ -1,0 +1,160 @@
+{
+    "title": "Carzilla.de Car Scraper",
+    "description": "Scrapes car listings from Carzilla.de and returns them in UnifiedCar format for importocoches.com integration",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "make": {
+            "title": "Car Brand",
+            "type": "string",
+            "description": "Car manufacturer/brand to search for",
+            "editor": "select",
+            "example": "BMW",
+            "enum": [
+                "Abarth", "Alfa Romeo", "Audi", "BMW", "Bentley", "BYD", "Citroen", "Cupra",
+                "Dacia", "Fiat", "Ford", "Genesis", "Hyundai", "Jaguar", "Jeep", "Kia",
+                "Lamborghini", "Land Rover", "Lexus", "Maserati", "Maxus", "Mazda",
+                "Mercedes-Benz", "MG", "MINI", "Mitsubishi", "Nissan", "Opel", "Peugeot",
+                "Polestar", "Porsche", "Renault", "Seat", "Skoda", "Smart", "SSangYong",
+                "Subaru", "Suzuki", "Tesla", "Toyota", "Volkswagen", "Volvo", "XPENG"
+            ],
+            "enumTitles": [
+                "Abarth", "Alfa Romeo", "Audi", "BMW", "Bentley", "BYD", "Citroën", "Cupra",
+                "Dacia", "Fiat", "Ford", "Genesis", "Hyundai", "Jaguar", "Jeep", "Kia",
+                "Lamborghini", "Land Rover", "Lexus", "Maserati", "Maxus", "Mazda",
+                "Mercedes-Benz", "MG", "MINI", "Mitsubishi", "Nissan", "Opel", "Peugeot",
+                "Polestar", "Porsche", "Renault", "SEAT", "Škoda", "Smart", "SsangYong",
+                "Subaru", "Suzuki", "Tesla", "Toyota", "VW", "Volvo", "XPENG"
+            ]
+        },
+        "model": {
+            "title": "Car Model",
+            "type": "string",
+            "description": "Specific car model (e.g., 320, 530, A4, Model 3). Leave empty to search all models.",
+            "editor": "textfield",
+            "example": "530"
+        },
+        "model_description": {
+            "title": "Model Variant/Description",
+            "type": "string",
+            "description": "Additional model variant or description (e.g., xDrive, M-Sport, GTI)",
+            "editor": "textfield",
+            "example": "xDrive"
+        },
+        "price_min": {
+            "title": "Minimum Price (€)",
+            "type": "string",
+            "description": "Minimum price in euros. Leave empty for no minimum.",
+            "editor": "textfield",
+            "example": "15000",
+            "pattern": "^\\d+$"
+        },
+        "price_max": {
+            "title": "Maximum Price (€)",
+            "type": "string",
+            "description": "Maximum price in euros. Leave empty for no maximum.",
+            "editor": "textfield",
+            "example": "50000",
+            "pattern": "^\\d+$"
+        },
+        "mileage_max": {
+            "title": "Maximum Mileage (km)",
+            "type": "string",
+            "description": "Maximum mileage in kilometers. Leave empty for no limit.",
+            "editor": "textfield",
+            "example": "100000",
+            "pattern": "^\\d+$"
+        },
+        "first_registration_date": {
+            "title": "Minimum Registration Year",
+            "type": "string",
+            "description": "Minimum registration year (YYYY format). Leave empty for no minimum.",
+            "editor": "textfield",
+            "example": "2020",
+            "pattern": "^\\d{4}$"
+        },
+        "fuel": {
+            "title": "Fuel Type",
+            "type": "string",
+            "description": "Filter by fuel type. Leave empty to include all fuel types.",
+            "editor": "select",
+            "enum": [
+                "",
+                "Gasolina",
+                "Diésel",
+                "Gas de automoción",
+                "Gas natural",
+                "Eléctrico",
+                "Híbrido (gasolina/eléctrico)",
+                "Hidrógeno",
+                "Etanol (FFV,E85, etc.)",
+                "Híbrido (diésel/eléctrico)",
+                "Otro"
+            ],
+            "enumTitles": [
+                "All fuel types",
+                "Petrol",
+                "Diesel",
+                "LPG",
+                "CNG",
+                "Electric",
+                "Hybrid (Petrol/Electric)",
+                "Hydrogen",
+                "Ethanol (E85)",
+                "Hybrid (Diesel/Electric)",
+                "Other"
+            ]
+        },
+        "potencia": {
+            "title": "Minimum Power",
+            "type": "string",
+            "description": "Minimum power in kW. Can also accept CV (will be converted automatically).",
+            "editor": "textfield",
+            "example": "147",
+            "pattern": "^\\d+$"
+        },
+        "transmision": {
+            "title": "Transmission Type",
+            "type": "string",
+            "description": "Filter by transmission type. Leave empty to include all transmission types.",
+            "editor": "select",
+            "enum": ["", "Manual", "Automático"],
+            "enumTitles": ["All transmissions", "Manual", "Automatic"]
+        },
+        "fourwheeldrive": {
+            "title": "4x4 / All-Wheel Drive",
+            "type": "string",
+            "description": "Filter for vehicles with 4x4/all-wheel drive",
+            "editor": "select",
+            "enum": ["0", "1"],
+            "enumTitles": ["All vehicles", "Only 4x4 vehicles"],
+            "default": "0"
+        },
+        "maxPages": {
+            "title": "Maximum Pages to Scrape",
+            "type": "integer",
+            "description": "Maximum number of result pages to scrape (each page has ~20 cars)",
+            "editor": "number",
+            "default": 1,
+            "minimum": 1,
+            "maximum": 5
+        },
+        "headless": {
+            "title": "Headless Browser Mode",
+            "type": "boolean",
+            "description": "Run browser in headless mode (recommended for production)",
+            "editor": "checkbox",
+            "default": true
+        },
+        "timeout": {
+            "title": "Timeout (milliseconds)",
+            "type": "integer",
+            "description": "Maximum execution time in milliseconds",
+            "editor": "number",
+            "default": 20000,
+            "minimum": 10000,
+            "maximum": 60000
+        }
+    },
+    "required": ["make"]
+}

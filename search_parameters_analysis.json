@@ -1,0 +1,5405 @@
+{
+  "timestamp": "2025-09-26T16:11:28.554Z",
+  "formElements": [
+    {
+      "index": 0,
+      "type": "checkbox",
+      "name": "",
+      "id": "st-2",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Gebrauchtfahrzeug"
+    },
+    {
+      "index": 1,
+      "type": "checkbox",
+      "name": "",
+      "id": "st-1",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Neufahrzeug"
+    },
+    {
+      "index": 2,
+      "type": "checkbox",
+      "name": "",
+      "id": "st-4",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Vorführfahrzeug"
+    },
+    {
+      "index": 3,
+      "type": "checkbox",
+      "name": "",
+      "id": "st-6",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Tageszulassung"
+    },
+    {
+      "index": 4,
+      "type": "checkbox",
+      "name": "",
+      "id": "st-3",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Jahresfahrzeug"
+    },
+    {
+      "index": 5,
+      "type": "checkbox",
+      "name": "",
+      "id": "st-5",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Dienstfahrzeug"
+    },
+    {
+      "index": 6,
+      "type": "checkbox",
+      "name": "",
+      "id": "st-10",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Oldtimer"
+    },
+    {
+      "index": 7,
+      "type": "checkbox",
+      "name": "",
+      "id": "st-9",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Youngtimer"
+    },
+    {
+      "index": 8,
+      "type": "select-one",
+      "name": "",
+      "id": "",
+      "className": "form-control form-control--combobox",
+      "options": [
+        {
+          "value": "number:178",
+          "text": "Abarth"
+        },
+        {
+          "value": "number:1",
+          "text": "AC"
+        },
+        {
+          "value": "number:2",
+          "text": "Alfa Romeo"
+        },
+        {
+          "value": "number:73",
+          "text": "Alpina"
+        },
+        {
+          "value": "number:331",
+          "text": "Alpine"
+        },
+        {
+          "value": "number:4",
+          "text": "Aston Martin"
+        },
+        {
+          "value": "number:5",
+          "text": "Audi"
+        },
+        {
+          "value": "number:347",
+          "text": "Austin Healey"
+        },
+        {
+          "value": "number:235",
+          "text": "Baic"
+        },
+        {
+          "value": "number:8",
+          "text": "Bentley"
+        },
+        {
+          "value": "number:9",
+          "text": "BMW"
+        },
+        {
+          "value": "number:141",
+          "text": "BYD"
+        },
+        {
+          "value": "number:13",
+          "text": "Cadillac"
+        },
+        {
+          "value": "number:14",
+          "text": "Chevrolet"
+        },
+        {
+          "value": "number:15",
+          "text": "Chrysler"
+        },
+        {
+          "value": "number:16",
+          "text": "Citroen"
+        },
+        {
+          "value": "number:115",
+          "text": "Corvette"
+        },
+        {
+          "value": "number:238",
+          "text": "Cupra"
+        },
+        {
+          "value": "number:112",
+          "text": "Dacia"
+        },
+        {
+          "value": "number:17",
+          "text": "Daewoo"
+        },
+        {
+          "value": "number:19",
+          "text": "Daihatsu"
+        },
+        {
+          "value": "number:333",
+          "text": "DFM"
+        },
+        {
+          "value": "number:236",
+          "text": "DFSK"
+        },
+        {
+          "value": "number:20",
+          "text": "Dodge"
+        },
+        {
+          "value": "number:216",
+          "text": "DS Automobiles"
+        },
+        {
+          "value": "number:255",
+          "text": "e.GO"
+        },
+        {
+          "value": "number:21",
+          "text": "Ferrari"
+        },
+        {
+          "value": "number:22",
+          "text": "Fiat"
+        },
+        {
+          "value": "number:23",
+          "text": "Ford"
+        },
+        {
+          "value": "number:288",
+          "text": "Genesis"
+        },
+        {
+          "value": "number:354",
+          "text": "Glas"
+        },
+        {
+          "value": "number:351",
+          "text": "GWM"
+        },
+        {
+          "value": "number:25",
+          "text": "Honda"
+        },
+        {
+          "value": "number:26",
+          "text": "Hyundai"
+        },
+        {
+          "value": "number:289",
+          "text": "Ineos"
+        },
+        {
+          "value": "number:127",
+          "text": "Infiniti"
+        },
+        {
+          "value": "number:28",
+          "text": "Isuzu"
+        },
+        {
+          "value": "number:30",
+          "text": "Jaguar"
+        },
+        {
+          "value": "number:31",
+          "text": "Jeep"
+        },
+        {
+          "value": "number:368",
+          "text": "KGM"
+        },
+        {
+          "value": "number:32",
+          "text": "Kia"
+        },
+        {
+          "value": "number:33",
+          "text": "Lada"
+        },
+        {
+          "value": "number:34",
+          "text": "Lamborghini"
+        },
+        {
+          "value": "number:35",
+          "text": "Lancia"
+        },
+        {
+          "value": "number:36",
+          "text": "Land Rover"
+        },
+        {
+          "value": "number:362",
+          "text": "Leapmotor"
+        },
+        {
+          "value": "number:37",
+          "text": "Lexus"
+        },
+        {
+          "value": "number:281",
+          "text": "Lynk & Co"
+        },
+        {
+          "value": "number:107",
+          "text": "MAN"
+        },
+        {
+          "value": "number:40",
+          "text": "Maserati"
+        },
+        {
+          "value": "number:287",
+          "text": "Maxus"
+        },
+        {
+          "value": "number:41",
+          "text": "Mazda"
+        },
+        {
+          "value": "number:186",
+          "text": "McLaren"
+        },
+        {
+          "value": "number:42",
+          "text": "Mercedes-Benz"
+        },
+        {
+          "value": "number:44",
+          "text": "MG"
+        },
+        {
+          "value": "number:45",
+          "text": "MINI"
+        },
+        {
+          "value": "number:46",
+          "text": "Mitsubishi"
+        },
+        {
+          "value": "number:47",
+          "text": "Morgan"
+        },
+        {
+          "value": "number:48",
+          "text": "Nissan"
+        },
+        {
+          "value": "number:50",
+          "text": "Opel"
+        },
+        {
+          "value": "number:302",
+          "text": "Ora"
+        },
+        {
+          "value": "number:51",
+          "text": "Peugeot"
+        },
+        {
+          "value": "number:245",
+          "text": "Polestar"
+        },
+        {
+          "value": "number:54",
+          "text": "Porsche"
+        },
+        {
+          "value": "number:56",
+          "text": "Renault"
+        },
+        {
+          "value": "number:59",
+          "text": "Saab"
+        },
+        {
+          "value": "number:60",
+          "text": "Seat"
+        },
+        {
+          "value": "number:61",
+          "text": "Skoda"
+        },
+        {
+          "value": "number:62",
+          "text": "Smart"
+        },
+        {
+          "value": "number:78",
+          "text": "SSangYong"
+        },
+        {
+          "value": "number:63",
+          "text": "Subaru"
+        },
+        {
+          "value": "number:64",
+          "text": "Suzuki"
+        },
+        {
+          "value": "number:310",
+          "text": "SWM"
+        },
+        {
+          "value": "number:202",
+          "text": "Tesla"
+        },
+        {
+          "value": "number:66",
+          "text": "Toyota"
+        },
+        {
+          "value": "number:69",
+          "text": "Volkswagen"
+        },
+        {
+          "value": "number:70",
+          "text": "Volvo"
+        },
+        {
+          "value": "number:305",
+          "text": "WEY"
+        },
+        {
+          "value": "number:344",
+          "text": "XEV"
+        },
+        {
+          "value": "number:353",
+          "text": "XPENG"
+        }
+      ],
+      "optionCount": 80,
+      "nearbyText": "Marke"
+    },
+    {
+      "index": 9,
+      "type": "select-one",
+      "name": "",
+      "id": "",
+      "className": "form-control form-control--combobox form-control form-control--combobox form-control form-control--combobox form-control form-control--combobox form-control form-control--combobox form-control form-control--combobox",
+      "options": [],
+      "optionCount": 0,
+      "nearbyText": "Modell"
+    },
+    {
+      "index": 10,
+      "type": "text",
+      "name": "",
+      "id": "",
+      "className": "form-control",
+      "placeholder": "z.B. GTI ...",
+      "nearbyText": "Variante"
+    },
+    {
+      "index": 11,
+      "type": "checkbox",
+      "name": "",
+      "id": "bt-17",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "SUV/Gelaendew./Pickup"
+    },
+    {
+      "index": 12,
+      "type": "checkbox",
+      "name": "",
+      "id": "bt-1",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Limousine"
+    },
+    {
+      "index": 13,
+      "type": "checkbox",
+      "name": "",
+      "id": "bt-4",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Kombi"
+    },
+    {
+      "index": 14,
+      "type": "checkbox",
+      "name": "",
+      "id": "bt-6",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Kleinwagen"
+    },
+    {
+      "index": 15,
+      "type": "checkbox",
+      "name": "",
+      "id": "bt-16",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Van/Kleinbus"
+    },
+    {
+      "index": 16,
+      "type": "checkbox",
+      "name": "",
+      "id": "bt-5",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Cabrio/Roadster"
+    },
+    {
+      "index": 17,
+      "type": "checkbox",
+      "name": "",
+      "id": "bt-3",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Sportwagen/Coupe"
+    },
+    {
+      "index": 18,
+      "type": "checkbox",
+      "name": "",
+      "id": "bt-92",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Lieferwagen"
+    },
+    {
+      "index": 19,
+      "type": "checkbox",
+      "name": "",
+      "id": "bt-2",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Kompakt"
+    },
+    {
+      "index": 20,
+      "type": "select-one",
+      "name": "",
+      "id": "",
+      "className": "form-control form-control--combobox pos ",
+      "options": [
+        {
+          "value": "number:1",
+          "text": "1"
+        },
+        {
+          "value": "number:2",
+          "text": "2"
+        },
+        {
+          "value": "number:3",
+          "text": "3"
+        },
+        {
+          "value": "number:4",
+          "text": "4"
+        },
+        {
+          "value": "number:5",
+          "text": "5"
+        },
+        {
+          "value": "number:6",
+          "text": "6"
+        },
+        {
+          "value": "number:7",
+          "text": "7"
+        },
+        {
+          "value": "number:8",
+          "text": "8"
+        },
+        {
+          "value": "number:9",
+          "text": "9"
+        }
+      ],
+      "optionCount": 9,
+      "nearbyText": "Anzahl Sitzplätze"
+    },
+    {
+      "index": 21,
+      "type": "select-one",
+      "name": "",
+      "id": "",
+      "className": "form-control form-control--combobox pos ",
+      "options": [
+        {
+          "value": "number:1",
+          "text": "1"
+        },
+        {
+          "value": "number:2",
+          "text": "2"
+        },
+        {
+          "value": "number:3",
+          "text": "3"
+        },
+        {
+          "value": "number:4",
+          "text": "4"
+        },
+        {
+          "value": "number:5",
+          "text": "5"
+        },
+        {
+          "value": "number:6",
+          "text": "6"
+        },
+        {
+          "value": "number:7",
+          "text": "7"
+        },
+        {
+          "value": "number:8",
+          "text": "8"
+        },
+        {
+          "value": "number:9",
+          "text": "9"
+        }
+      ],
+      "optionCount": 9,
+      "nearbyText": ""
+    },
+    {
+      "index": 22,
+      "type": "select-one",
+      "name": "",
+      "id": "",
+      "className": "form-control form-control--combobox form-control form-control--combobox",
+      "options": [
+        {
+          "value": "object:7",
+          "text": "2/3"
+        },
+        {
+          "value": "object:8",
+          "text": "4/5"
+        },
+        {
+          "value": "object:9",
+          "text": "6/7"
+        }
+      ],
+      "optionCount": 3,
+      "nearbyText": "Anzahl Türen"
+    },
+    {
+      "index": 23,
+      "type": "radio",
+      "name": "radio",
+      "id": "r1",
+      "className": "ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Kaufpreis"
+    },
+    {
+      "index": 24,
+      "type": "radio",
+      "name": "radio",
+      "id": "r2",
+      "className": "ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Monatsrate"
+    },
+    {
+      "index": 25,
+      "type": "select-one",
+      "name": "",
+      "id": "",
+      "className": "form-control form-control--combobox pos ",
+      "options": [
+        {
+          "value": "number:1000",
+          "text": "1000,- €"
+        },
+        {
+          "value": "number:5000",
+          "text": "5000,- €"
+        },
+        {
+          "value": "number:10000",
+          "text": "10000,- €"
+        },
+        {
+          "value": "number:15000",
+          "text": "15000,- €"
+        },
+        {
+          "value": "number:20000",
+          "text": "20000,- €"
+        },
+        {
+          "value": "number:30000",
+          "text": "30000,- €"
+        },
+        {
+          "value": "number:45000",
+          "text": "45000,- €"
+        },
+        {
+          "value": "number:60000",
+          "text": "60000,- €"
+        },
+        {
+          "value": "number:75000",
+          "text": "75000,- €"
+        },
+        {
+          "value": "number:100000",
+          "text": "100000,- €"
+        },
+        {
+          "value": "number:200000",
+          "text": "200000,- €"
+        },
+        {
+          "value": "number:300000",
+          "text": "300000,- €"
+        },
+        {
+          "value": "number:400000",
+          "text": "400000,- €"
+        },
+        {
+          "value": "number:500000",
+          "text": "500000,- €"
+        }
+      ],
+      "optionCount": 14,
+      "nearbyText": "Preis (€)"
+    },
+    {
+      "index": 26,
+      "type": "select-one",
+      "name": "",
+      "id": "",
+      "className": "form-control form-control--combobox pos ",
+      "options": [
+        {
+          "value": "number:1000",
+          "text": "1000,- €"
+        },
+        {
+          "value": "number:5000",
+          "text": "5000,- €"
+        },
+        {
+          "value": "number:10000",
+          "text": "10000,- €"
+        },
+        {
+          "value": "number:15000",
+          "text": "15000,- €"
+        },
+        {
+          "value": "number:20000",
+          "text": "20000,- €"
+        },
+        {
+          "value": "number:30000",
+          "text": "30000,- €"
+        },
+        {
+          "value": "number:45000",
+          "text": "45000,- €"
+        },
+        {
+          "value": "number:60000",
+          "text": "60000,- €"
+        },
+        {
+          "value": "number:75000",
+          "text": "75000,- €"
+        },
+        {
+          "value": "number:100000",
+          "text": "100000,- €"
+        },
+        {
+          "value": "number:200000",
+          "text": "200000,- €"
+        },
+        {
+          "value": "number:300000",
+          "text": "300000,- €"
+        },
+        {
+          "value": "number:400000",
+          "text": "400000,- €"
+        },
+        {
+          "value": "number:500000",
+          "text": "500000,- €"
+        }
+      ],
+      "optionCount": 14,
+      "nearbyText": ""
+    },
+    {
+      "index": 27,
+      "type": "select-one",
+      "name": "",
+      "id": "o3",
+      "className": "form-control form-control--combobox ng-pristine ng-untouched ng-valid",
+      "options": [
+        {
+          "value": "true",
+          "text": "MwSt. ausweisbar"
+        },
+        {
+          "value": "false",
+          "text": "MwSt. nicht ausweisbar"
+        }
+      ],
+      "optionCount": 2,
+      "label": "MwSt."
+    },
+    {
+      "index": 28,
+      "type": "select-one",
+      "name": "",
+      "id": "",
+      "className": "form-control form-control--combobox pos ",
+      "options": [
+        {
+          "value": "number:2025",
+          "text": "2025"
+        },
+        {
+          "value": "number:2024",
+          "text": "2024"
+        },
+        {
+          "value": "number:2023",
+          "text": "2023"
+        },
+        {
+          "value": "number:2022",
+          "text": "2022"
+        },
+        {
+          "value": "number:2021",
+          "text": "2021"
+        },
+        {
+          "value": "number:2020",
+          "text": "2020"
+        },
+        {
+          "value": "number:2019",
+          "text": "2019"
+        },
+        {
+          "value": "number:2018",
+          "text": "2018"
+        },
+        {
+          "value": "number:2017",
+          "text": "2017"
+        },
+        {
+          "value": "number:2016",
+          "text": "2016"
+        },
+        {
+          "value": "number:2015",
+          "text": "2015"
+        },
+        {
+          "value": "number:2014",
+          "text": "2014"
+        },
+        {
+          "value": "number:2013",
+          "text": "2013"
+        },
+        {
+          "value": "number:2012",
+          "text": "2012"
+        },
+        {
+          "value": "number:2011",
+          "text": "2011"
+        },
+        {
+          "value": "number:2010",
+          "text": "2010"
+        },
+        {
+          "value": "number:2009",
+          "text": "2009"
+        },
+        {
+          "value": "number:2008",
+          "text": "2008"
+        },
+        {
+          "value": "number:2007",
+          "text": "2007"
+        },
+        {
+          "value": "number:2006",
+          "text": "2006"
+        },
+        {
+          "value": "number:2005",
+          "text": "2005"
+        },
+        {
+          "value": "number:2004",
+          "text": "2004"
+        },
+        {
+          "value": "number:2003",
+          "text": "2003"
+        },
+        {
+          "value": "number:2002",
+          "text": "2002"
+        },
+        {
+          "value": "number:2001",
+          "text": "2001"
+        },
+        {
+          "value": "number:2000",
+          "text": "2000"
+        },
+        {
+          "value": "number:1995",
+          "text": "1995"
+        },
+        {
+          "value": "number:1990",
+          "text": "1990"
+        },
+        {
+          "value": "number:1985",
+          "text": "1985"
+        },
+        {
+          "value": "number:1980",
+          "text": "1980"
+        },
+        {
+          "value": "number:1970",
+          "text": "1970"
+        },
+        {
+          "value": "number:1960",
+          "text": "1960"
+        },
+        {
+          "value": "number:1950",
+          "text": "1950"
+        },
+        {
+          "value": "number:1940",
+          "text": "1940"
+        },
+        {
+          "value": "number:1930",
+          "text": "1930"
+        },
+        {
+          "value": "number:1920",
+          "text": "1920"
+        },
+        {
+          "value": "number:1910",
+          "text": "1910"
+        },
+        {
+          "value": "number:1900",
+          "text": "1900"
+        }
+      ],
+      "optionCount": 38,
+      "nearbyText": "Erstzulassung"
+    },
+    {
+      "index": 29,
+      "type": "select-one",
+      "name": "",
+      "id": "",
+      "className": "form-control form-control--combobox pos ",
+      "options": [
+        {
+          "value": "number:2025",
+          "text": "2025"
+        },
+        {
+          "value": "number:2024",
+          "text": "2024"
+        },
+        {
+          "value": "number:2023",
+          "text": "2023"
+        },
+        {
+          "value": "number:2022",
+          "text": "2022"
+        },
+        {
+          "value": "number:2021",
+          "text": "2021"
+        },
+        {
+          "value": "number:2020",
+          "text": "2020"
+        },
+        {
+          "value": "number:2019",
+          "text": "2019"
+        },
+        {
+          "value": "number:2018",
+          "text": "2018"
+        },
+        {
+          "value": "number:2017",
+          "text": "2017"
+        },
+        {
+          "value": "number:2016",
+          "text": "2016"
+        },
+        {
+          "value": "number:2015",
+          "text": "2015"
+        },
+        {
+          "value": "number:2014",
+          "text": "2014"
+        },
+        {
+          "value": "number:2013",
+          "text": "2013"
+        },
+        {
+          "value": "number:2012",
+          "text": "2012"
+        },
+        {
+          "value": "number:2011",
+          "text": "2011"
+        },
+        {
+          "value": "number:2010",
+          "text": "2010"
+        },
+        {
+          "value": "number:2009",
+          "text": "2009"
+        },
+        {
+          "value": "number:2008",
+          "text": "2008"
+        },
+        {
+          "value": "number:2007",
+          "text": "2007"
+        },
+        {
+          "value": "number:2006",
+          "text": "2006"
+        },
+        {
+          "value": "number:2005",
+          "text": "2005"
+        },
+        {
+          "value": "number:2004",
+          "text": "2004"
+        },
+        {
+          "value": "number:2003",
+          "text": "2003"
+        },
+        {
+          "value": "number:2002",
+          "text": "2002"
+        },
+        {
+          "value": "number:2001",
+          "text": "2001"
+        },
+        {
+          "value": "number:2000",
+          "text": "2000"
+        },
+        {
+          "value": "number:1995",
+          "text": "1995"
+        },
+        {
+          "value": "number:1990",
+          "text": "1990"
+        },
+        {
+          "value": "number:1985",
+          "text": "1985"
+        },
+        {
+          "value": "number:1980",
+          "text": "1980"
+        },
+        {
+          "value": "number:1970",
+          "text": "1970"
+        },
+        {
+          "value": "number:1960",
+          "text": "1960"
+        },
+        {
+          "value": "number:1950",
+          "text": "1950"
+        },
+        {
+          "value": "number:1940",
+          "text": "1940"
+        },
+        {
+          "value": "number:1930",
+          "text": "1930"
+        },
+        {
+          "value": "number:1920",
+          "text": "1920"
+        },
+        {
+          "value": "number:1910",
+          "text": "1910"
+        },
+        {
+          "value": "number:1900",
+          "text": "1900"
+        }
+      ],
+      "optionCount": 38,
+      "nearbyText": ""
+    },
+    {
+      "index": 30,
+      "type": "select-one",
+      "name": "",
+      "id": "",
+      "className": "form-control form-control--combobox pos ",
+      "options": [
+        {
+          "value": "number:0",
+          "text": "0 km"
+        },
+        {
+          "value": "number:1000",
+          "text": "1000 km"
+        },
+        {
+          "value": "number:2000",
+          "text": "2000 km"
+        },
+        {
+          "value": "number:3000",
+          "text": "3000 km"
+        },
+        {
+          "value": "number:4000",
+          "text": "4000 km"
+        },
+        {
+          "value": "number:5000",
+          "text": "5000 km"
+        },
+        {
+          "value": "number:6000",
+          "text": "6000 km"
+        },
+        {
+          "value": "number:7000",
+          "text": "7000 km"
+        },
+        {
+          "value": "number:8000",
+          "text": "8000 km"
+        },
+        {
+          "value": "number:9000",
+          "text": "9000 km"
+        },
+        {
+          "value": "number:10000",
+          "text": "10000 km"
+        },
+        {
+          "value": "number:20000",
+          "text": "20000 km"
+        },
+        {
+          "value": "number:30000",
+          "text": "30000 km"
+        },
+        {
+          "value": "number:40000",
+          "text": "40000 km"
+        },
+        {
+          "value": "number:50000",
+          "text": "50000 km"
+        },
+        {
+          "value": "number:60000",
+          "text": "60000 km"
+        },
+        {
+          "value": "number:70000",
+          "text": "70000 km"
+        },
+        {
+          "value": "number:80000",
+          "text": "80000 km"
+        },
+        {
+          "value": "number:90000",
+          "text": "90000 km"
+        },
+        {
+          "value": "number:100000",
+          "text": "100000 km"
+        },
+        {
+          "value": "number:110000",
+          "text": "110000 km"
+        },
+        {
+          "value": "number:120000",
+          "text": "120000 km"
+        },
+        {
+          "value": "number:130000",
+          "text": "130000 km"
+        },
+        {
+          "value": "number:140000",
+          "text": "140000 km"
+        },
+        {
+          "value": "number:150000",
+          "text": "150000 km"
+        },
+        {
+          "value": "number:175000",
+          "text": "175000 km"
+        },
+        {
+          "value": "number:200000",
+          "text": "200000 km"
+        }
+      ],
+      "optionCount": 27,
+      "nearbyText": "Kilometer"
+    },
+    {
+      "index": 31,
+      "type": "select-one",
+      "name": "",
+      "id": "",
+      "className": "form-control form-control--combobox pos ",
+      "options": [
+        {
+          "value": "number:0",
+          "text": "0 km"
+        },
+        {
+          "value": "number:1000",
+          "text": "1000 km"
+        },
+        {
+          "value": "number:2000",
+          "text": "2000 km"
+        },
+        {
+          "value": "number:3000",
+          "text": "3000 km"
+        },
+        {
+          "value": "number:4000",
+          "text": "4000 km"
+        },
+        {
+          "value": "number:5000",
+          "text": "5000 km"
+        },
+        {
+          "value": "number:6000",
+          "text": "6000 km"
+        },
+        {
+          "value": "number:7000",
+          "text": "7000 km"
+        },
+        {
+          "value": "number:8000",
+          "text": "8000 km"
+        },
+        {
+          "value": "number:9000",
+          "text": "9000 km"
+        },
+        {
+          "value": "number:10000",
+          "text": "10000 km"
+        },
+        {
+          "value": "number:20000",
+          "text": "20000 km"
+        },
+        {
+          "value": "number:30000",
+          "text": "30000 km"
+        },
+        {
+          "value": "number:40000",
+          "text": "40000 km"
+        },
+        {
+          "value": "number:50000",
+          "text": "50000 km"
+        },
+        {
+          "value": "number:60000",
+          "text": "60000 km"
+        },
+        {
+          "value": "number:70000",
+          "text": "70000 km"
+        },
+        {
+          "value": "number:80000",
+          "text": "80000 km"
+        },
+        {
+          "value": "number:90000",
+          "text": "90000 km"
+        },
+        {
+          "value": "number:100000",
+          "text": "100000 km"
+        },
+        {
+          "value": "number:110000",
+          "text": "110000 km"
+        },
+        {
+          "value": "number:120000",
+          "text": "120000 km"
+        },
+        {
+          "value": "number:130000",
+          "text": "130000 km"
+        },
+        {
+          "value": "number:140000",
+          "text": "140000 km"
+        },
+        {
+          "value": "number:150000",
+          "text": "150000 km"
+        },
+        {
+          "value": "number:175000",
+          "text": "175000 km"
+        },
+        {
+          "value": "number:200000",
+          "text": "200000 km"
+        }
+      ],
+      "optionCount": 27,
+      "nearbyText": ""
+    },
+    {
+      "index": 32,
+      "type": "select-one",
+      "name": "",
+      "id": "",
+      "className": "form-control form-control--combobox pos ",
+      "options": [
+        {
+          "value": "number:40",
+          "text": "40 kw (54 PS)"
+        },
+        {
+          "value": "number:60",
+          "text": "60 kw (82 PS)"
+        },
+        {
+          "value": "number:80",
+          "text": "80 kw (109 PS)"
+        },
+        {
+          "value": "number:100",
+          "text": "100 kw (136 PS)"
+        },
+        {
+          "value": "number:150",
+          "text": "150 kw (204 PS)"
+        },
+        {
+          "value": "number:200",
+          "text": "200 kw (272 PS)"
+        },
+        {
+          "value": "number:300",
+          "text": "300 kw (408 PS)"
+        },
+        {
+          "value": "number:400",
+          "text": "400 kw (544 PS)"
+        },
+        {
+          "value": "number:500",
+          "text": "500 kw (680 PS)"
+        },
+        {
+          "value": "number:600",
+          "text": "600 kw (816 PS)"
+        }
+      ],
+      "optionCount": 10,
+      "nearbyText": "Leistung (in kw)"
+    },
+    {
+      "index": 33,
+      "type": "select-one",
+      "name": "",
+      "id": "",
+      "className": "form-control form-control--combobox pos ",
+      "options": [
+        {
+          "value": "number:40",
+          "text": "40 kw (54 PS)"
+        },
+        {
+          "value": "number:60",
+          "text": "60 kw (82 PS)"
+        },
+        {
+          "value": "number:80",
+          "text": "80 kw (109 PS)"
+        },
+        {
+          "value": "number:100",
+          "text": "100 kw (136 PS)"
+        },
+        {
+          "value": "number:150",
+          "text": "150 kw (204 PS)"
+        },
+        {
+          "value": "number:200",
+          "text": "200 kw (272 PS)"
+        },
+        {
+          "value": "number:300",
+          "text": "300 kw (408 PS)"
+        },
+        {
+          "value": "number:400",
+          "text": "400 kw (544 PS)"
+        },
+        {
+          "value": "number:500",
+          "text": "500 kw (680 PS)"
+        },
+        {
+          "value": "number:600",
+          "text": "600 kw (816 PS)"
+        }
+      ],
+      "optionCount": 10,
+      "nearbyText": ""
+    },
+    {
+      "index": 34,
+      "type": "checkbox",
+      "name": "",
+      "id": "mt-1",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Benzin"
+    },
+    {
+      "index": 35,
+      "type": "checkbox",
+      "name": "",
+      "id": "mt-2",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Diesel"
+    },
+    {
+      "index": 36,
+      "type": "checkbox",
+      "name": "",
+      "id": "mt-4",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Elektro"
+    },
+    {
+      "index": 37,
+      "type": "checkbox",
+      "name": "",
+      "id": "mt-10",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "PlugIn Hybrid-Benzin"
+    },
+    {
+      "index": 38,
+      "type": "checkbox",
+      "name": "",
+      "id": "mt-5",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Hybrid"
+    },
+    {
+      "index": 39,
+      "type": "checkbox",
+      "name": "",
+      "id": "mt-8",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Erdgas"
+    },
+    {
+      "index": 40,
+      "type": "checkbox",
+      "name": "",
+      "id": "mt-3",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Gas"
+    },
+    {
+      "index": 41,
+      "type": "checkbox",
+      "name": "",
+      "id": "mt-11",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "PlugIn Hybrid-Diesel"
+    },
+    {
+      "index": 42,
+      "type": "checkbox",
+      "name": "",
+      "id": "mt-12",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Wasserstoff"
+    },
+    {
+      "index": 43,
+      "type": "checkbox",
+      "name": "",
+      "id": "mt-9",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Hybrid-Diesel"
+    },
+    {
+      "index": 44,
+      "type": "checkbox",
+      "name": "",
+      "id": "tm-2",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Automatik"
+    },
+    {
+      "index": 45,
+      "type": "checkbox",
+      "name": "",
+      "id": "tm-1",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Schaltgetriebe"
+    },
+    {
+      "index": 46,
+      "type": "checkbox",
+      "name": "",
+      "id": "tm-3",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Tiptronic"
+    },
+    {
+      "index": 47,
+      "type": "select-one",
+      "name": "",
+      "id": "",
+      "className": "form-control form-control--combobox pos ",
+      "options": [
+        {
+          "value": "number:0",
+          "text": "0 km"
+        },
+        {
+          "value": "number:10",
+          "text": "10 km"
+        },
+        {
+          "value": "number:20",
+          "text": "20 km"
+        },
+        {
+          "value": "number:30",
+          "text": "30 km"
+        },
+        {
+          "value": "number:40",
+          "text": "40 km"
+        },
+        {
+          "value": "number:50",
+          "text": "50 km"
+        },
+        {
+          "value": "number:75",
+          "text": "75 km"
+        },
+        {
+          "value": "number:100",
+          "text": "100 km"
+        },
+        {
+          "value": "number:125",
+          "text": "125 km"
+        },
+        {
+          "value": "number:150",
+          "text": "150 km"
+        },
+        {
+          "value": "number:200",
+          "text": "200 km"
+        },
+        {
+          "value": "number:250",
+          "text": "250 km"
+        },
+        {
+          "value": "number:300",
+          "text": "300 km"
+        },
+        {
+          "value": "number:350",
+          "text": "350 km"
+        },
+        {
+          "value": "number:400",
+          "text": "400 km"
+        },
+        {
+          "value": "number:450",
+          "text": "450 km"
+        },
+        {
+          "value": "number:500",
+          "text": "500 km"
+        },
+        {
+          "value": "number:600",
+          "text": "600 km"
+        },
+        {
+          "value": "number:700",
+          "text": "700 km"
+        },
+        {
+          "value": "number:800",
+          "text": "800 km"
+        },
+        {
+          "value": "number:900",
+          "text": "900 km"
+        },
+        {
+          "value": "number:1000",
+          "text": "1000 km"
+        },
+        {
+          "value": "number:1100",
+          "text": "1100 km"
+        },
+        {
+          "value": "number:1200",
+          "text": "1200 km"
+        },
+        {
+          "value": "number:1300",
+          "text": "1300 km"
+        },
+        {
+          "value": "number:1400",
+          "text": "1400 km"
+        },
+        {
+          "value": "number:1500",
+          "text": "1500 km"
+        }
+      ],
+      "optionCount": 27,
+      "nearbyText": "Gesamtreichweite (km)"
+    },
+    {
+      "index": 48,
+      "type": "select-one",
+      "name": "",
+      "id": "",
+      "className": "form-control form-control--combobox pos ",
+      "options": [
+        {
+          "value": "number:0",
+          "text": "0 km"
+        },
+        {
+          "value": "number:10",
+          "text": "10 km"
+        },
+        {
+          "value": "number:20",
+          "text": "20 km"
+        },
+        {
+          "value": "number:30",
+          "text": "30 km"
+        },
+        {
+          "value": "number:40",
+          "text": "40 km"
+        },
+        {
+          "value": "number:50",
+          "text": "50 km"
+        },
+        {
+          "value": "number:75",
+          "text": "75 km"
+        },
+        {
+          "value": "number:100",
+          "text": "100 km"
+        },
+        {
+          "value": "number:125",
+          "text": "125 km"
+        },
+        {
+          "value": "number:150",
+          "text": "150 km"
+        },
+        {
+          "value": "number:200",
+          "text": "200 km"
+        },
+        {
+          "value": "number:250",
+          "text": "250 km"
+        },
+        {
+          "value": "number:300",
+          "text": "300 km"
+        },
+        {
+          "value": "number:350",
+          "text": "350 km"
+        },
+        {
+          "value": "number:400",
+          "text": "400 km"
+        },
+        {
+          "value": "number:450",
+          "text": "450 km"
+        },
+        {
+          "value": "number:500",
+          "text": "500 km"
+        },
+        {
+          "value": "number:600",
+          "text": "600 km"
+        },
+        {
+          "value": "number:700",
+          "text": "700 km"
+        },
+        {
+          "value": "number:800",
+          "text": "800 km"
+        },
+        {
+          "value": "number:900",
+          "text": "900 km"
+        },
+        {
+          "value": "number:1000",
+          "text": "1000 km"
+        },
+        {
+          "value": "number:1100",
+          "text": "1100 km"
+        },
+        {
+          "value": "number:1200",
+          "text": "1200 km"
+        },
+        {
+          "value": "number:1300",
+          "text": "1300 km"
+        },
+        {
+          "value": "number:1400",
+          "text": "1400 km"
+        },
+        {
+          "value": "number:1500",
+          "text": "1500 km"
+        }
+      ],
+      "optionCount": 27,
+      "nearbyText": ""
+    },
+    {
+      "index": 49,
+      "type": "checkbox",
+      "name": "",
+      "id": "BonusAvailable",
+      "className": "ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Umweltbonusfähig"
+    },
+    {
+      "index": 50,
+      "type": "select-one",
+      "name": "",
+      "id": "",
+      "className": "form-control form-control--combobox pos ",
+      "options": [
+        {
+          "value": "number:15",
+          "text": "15 Minuten"
+        },
+        {
+          "value": "number:30",
+          "text": "30 Minuten"
+        },
+        {
+          "value": "number:45",
+          "text": "45 Minuten"
+        },
+        {
+          "value": "number:60",
+          "text": "60 Minuten"
+        },
+        {
+          "value": "number:90",
+          "text": "90 Minuten"
+        },
+        {
+          "value": "number:120",
+          "text": "120 Minuten"
+        },
+        {
+          "value": "number:150",
+          "text": "150 Minuten"
+        },
+        {
+          "value": "number:180",
+          "text": "180 Minuten"
+        },
+        {
+          "value": "number:210",
+          "text": "210 Minuten"
+        },
+        {
+          "value": "number:240",
+          "text": "240 Minuten"
+        },
+        {
+          "value": "number:270",
+          "text": "270 Minuten"
+        },
+        {
+          "value": "number:300",
+          "text": "300 Minuten"
+        },
+        {
+          "value": "number:400",
+          "text": "400 Minuten"
+        },
+        {
+          "value": "number:500",
+          "text": "500 Minuten"
+        },
+        {
+          "value": "number:600",
+          "text": "600 Minuten"
+        },
+        {
+          "value": "number:700",
+          "text": "700 Minuten"
+        },
+        {
+          "value": "number:800",
+          "text": "800 Minuten"
+        },
+        {
+          "value": "number:900",
+          "text": "900 Minuten"
+        },
+        {
+          "value": "number:1000",
+          "text": "1000 Minuten"
+        },
+        {
+          "value": "number:1500",
+          "text": "1500 Minuten"
+        },
+        {
+          "value": "number:2000",
+          "text": "2000 Minuten"
+        },
+        {
+          "value": "number:2500",
+          "text": "2500 Minuten"
+        }
+      ],
+      "optionCount": 22,
+      "nearbyText": "Ladezeit (AC - bis 100% in Minuten)"
+    },
+    {
+      "index": 51,
+      "type": "select-one",
+      "name": "",
+      "id": "",
+      "className": "form-control form-control--combobox pos ",
+      "options": [
+        {
+          "value": "number:15",
+          "text": "15 Minuten"
+        },
+        {
+          "value": "number:30",
+          "text": "30 Minuten"
+        },
+        {
+          "value": "number:45",
+          "text": "45 Minuten"
+        },
+        {
+          "value": "number:60",
+          "text": "60 Minuten"
+        },
+        {
+          "value": "number:90",
+          "text": "90 Minuten"
+        },
+        {
+          "value": "number:120",
+          "text": "120 Minuten"
+        },
+        {
+          "value": "number:150",
+          "text": "150 Minuten"
+        },
+        {
+          "value": "number:180",
+          "text": "180 Minuten"
+        },
+        {
+          "value": "number:210",
+          "text": "210 Minuten"
+        },
+        {
+          "value": "number:240",
+          "text": "240 Minuten"
+        },
+        {
+          "value": "number:270",
+          "text": "270 Minuten"
+        },
+        {
+          "value": "number:300",
+          "text": "300 Minuten"
+        },
+        {
+          "value": "number:400",
+          "text": "400 Minuten"
+        },
+        {
+          "value": "number:500",
+          "text": "500 Minuten"
+        },
+        {
+          "value": "number:600",
+          "text": "600 Minuten"
+        },
+        {
+          "value": "number:700",
+          "text": "700 Minuten"
+        },
+        {
+          "value": "number:800",
+          "text": "800 Minuten"
+        },
+        {
+          "value": "number:900",
+          "text": "900 Minuten"
+        },
+        {
+          "value": "number:1000",
+          "text": "1000 Minuten"
+        },
+        {
+          "value": "number:1500",
+          "text": "1500 Minuten"
+        },
+        {
+          "value": "number:2000",
+          "text": "2000 Minuten"
+        },
+        {
+          "value": "number:2500",
+          "text": "2500 Minuten"
+        }
+      ],
+      "optionCount": 22,
+      "nearbyText": ""
+    },
+    {
+      "index": 52,
+      "type": "select-one",
+      "name": "",
+      "id": "",
+      "className": "form-control form-control--combobox pos ",
+      "options": [
+        {
+          "value": "number:10",
+          "text": "10 Minuten"
+        },
+        {
+          "value": "number:15",
+          "text": "15 Minuten"
+        },
+        {
+          "value": "number:20",
+          "text": "20 Minuten"
+        },
+        {
+          "value": "number:25",
+          "text": "25 Minuten"
+        },
+        {
+          "value": "number:30",
+          "text": "30 Minuten"
+        },
+        {
+          "value": "number:35",
+          "text": "35 Minuten"
+        },
+        {
+          "value": "number:40",
+          "text": "40 Minuten"
+        },
+        {
+          "value": "number:45",
+          "text": "45 Minuten"
+        },
+        {
+          "value": "number:50",
+          "text": "50 Minuten"
+        },
+        {
+          "value": "number:55",
+          "text": "55 Minuten"
+        },
+        {
+          "value": "number:60",
+          "text": "60 Minuten"
+        },
+        {
+          "value": "number:70",
+          "text": "70 Minuten"
+        },
+        {
+          "value": "number:80",
+          "text": "80 Minuten"
+        },
+        {
+          "value": "number:90",
+          "text": "90 Minuten"
+        },
+        {
+          "value": "number:100",
+          "text": "100 Minuten"
+        },
+        {
+          "value": "number:125",
+          "text": "125 Minuten"
+        },
+        {
+          "value": "number:150",
+          "text": "150 Minuten"
+        },
+        {
+          "value": "number:175",
+          "text": "175 Minuten"
+        },
+        {
+          "value": "number:200",
+          "text": "200 Minuten"
+        },
+        {
+          "value": "number:225",
+          "text": "225 Minuten"
+        },
+        {
+          "value": "number:250",
+          "text": "250 Minuten"
+        },
+        {
+          "value": "number:300",
+          "text": "300 Minuten"
+        },
+        {
+          "value": "number:350",
+          "text": "350 Minuten"
+        },
+        {
+          "value": "number:400",
+          "text": "400 Minuten"
+        },
+        {
+          "value": "number:450",
+          "text": "450 Minuten"
+        },
+        {
+          "value": "number:500",
+          "text": "500 Minuten"
+        },
+        {
+          "value": "number:550",
+          "text": "550 Minuten"
+        },
+        {
+          "value": "number:600",
+          "text": "600 Minuten"
+        }
+      ],
+      "optionCount": 28,
+      "nearbyText": "Schnellladezeit (DC - bis 80% in Minuten)"
+    },
+    {
+      "index": 53,
+      "type": "select-one",
+      "name": "",
+      "id": "",
+      "className": "form-control form-control--combobox pos ",
+      "options": [
+        {
+          "value": "number:10",
+          "text": "10 Minuten"
+        },
+        {
+          "value": "number:15",
+          "text": "15 Minuten"
+        },
+        {
+          "value": "number:20",
+          "text": "20 Minuten"
+        },
+        {
+          "value": "number:25",
+          "text": "25 Minuten"
+        },
+        {
+          "value": "number:30",
+          "text": "30 Minuten"
+        },
+        {
+          "value": "number:35",
+          "text": "35 Minuten"
+        },
+        {
+          "value": "number:40",
+          "text": "40 Minuten"
+        },
+        {
+          "value": "number:45",
+          "text": "45 Minuten"
+        },
+        {
+          "value": "number:50",
+          "text": "50 Minuten"
+        },
+        {
+          "value": "number:55",
+          "text": "55 Minuten"
+        },
+        {
+          "value": "number:60",
+          "text": "60 Minuten"
+        },
+        {
+          "value": "number:70",
+          "text": "70 Minuten"
+        },
+        {
+          "value": "number:80",
+          "text": "80 Minuten"
+        },
+        {
+          "value": "number:90",
+          "text": "90 Minuten"
+        },
+        {
+          "value": "number:100",
+          "text": "100 Minuten"
+        },
+        {
+          "value": "number:125",
+          "text": "125 Minuten"
+        },
+        {
+          "value": "number:150",
+          "text": "150 Minuten"
+        },
+        {
+          "value": "number:175",
+          "text": "175 Minuten"
+        },
+        {
+          "value": "number:200",
+          "text": "200 Minuten"
+        },
+        {
+          "value": "number:225",
+          "text": "225 Minuten"
+        },
+        {
+          "value": "number:250",
+          "text": "250 Minuten"
+        },
+        {
+          "value": "number:300",
+          "text": "300 Minuten"
+        },
+        {
+          "value": "number:350",
+          "text": "350 Minuten"
+        },
+        {
+          "value": "number:400",
+          "text": "400 Minuten"
+        },
+        {
+          "value": "number:450",
+          "text": "450 Minuten"
+        },
+        {
+          "value": "number:500",
+          "text": "500 Minuten"
+        },
+        {
+          "value": "number:550",
+          "text": "550 Minuten"
+        },
+        {
+          "value": "number:600",
+          "text": "600 Minuten"
+        }
+      ],
+      "optionCount": 28,
+      "nearbyText": ""
+    },
+    {
+      "index": 54,
+      "type": "text",
+      "name": "",
+      "id": "",
+      "className": "form-control ng-pristine ng-untouched ng-valid",
+      "placeholder": "Postleitzahl",
+      "nearbyText": "PLZ eingeben"
+    },
+    {
+      "index": 55,
+      "type": "select-one",
+      "name": "",
+      "id": "",
+      "className": "form-control form-control--combobox ng-pristine ng-untouched ng-valid",
+      "options": [
+        {
+          "value": "5",
+          "text": "kein Umkreis"
+        },
+        {
+          "value": "10",
+          "text": "10km"
+        },
+        {
+          "value": "25",
+          "text": "25km"
+        },
+        {
+          "value": "50",
+          "text": "50km"
+        },
+        {
+          "value": "100",
+          "text": "100km"
+        },
+        {
+          "value": "200",
+          "text": "200km"
+        }
+      ],
+      "optionCount": 6,
+      "nearbyText": "Umkreis zum Zentrum"
+    },
+    {
+      "index": 56,
+      "type": "checkbox",
+      "name": "",
+      "id": "ec-2",
+      "className": "colorcheckbox schwarz ng-scope",
+      "placeholder": "",
+      "label": "Schwarz"
+    },
+    {
+      "index": 57,
+      "type": "checkbox",
+      "name": "",
+      "id": "ec-11",
+      "className": "colorcheckbox grau ng-scope",
+      "placeholder": "",
+      "label": "Grau"
+    },
+    {
+      "index": 58,
+      "type": "checkbox",
+      "name": "",
+      "id": "ec-1",
+      "className": "colorcheckbox weiss ng-scope",
+      "placeholder": "",
+      "label": "Weiss"
+    },
+    {
+      "index": 59,
+      "type": "checkbox",
+      "name": "",
+      "id": "ec-5",
+      "className": "colorcheckbox blau ng-scope",
+      "placeholder": "",
+      "label": "Blau"
+    },
+    {
+      "index": 60,
+      "type": "checkbox",
+      "name": "",
+      "id": "ec-12",
+      "className": "colorcheckbox silber ng-scope",
+      "placeholder": "",
+      "label": "Silber"
+    },
+    {
+      "index": 61,
+      "type": "checkbox",
+      "name": "",
+      "id": "ec-3",
+      "className": "colorcheckbox rot ng-scope",
+      "placeholder": "",
+      "label": "Rot"
+    },
+    {
+      "index": 62,
+      "type": "checkbox",
+      "name": "",
+      "id": "ec-4",
+      "className": "colorcheckbox gruen ng-scope",
+      "placeholder": "",
+      "label": "Gruen"
+    },
+    {
+      "index": 63,
+      "type": "checkbox",
+      "name": "",
+      "id": "ec-7",
+      "className": "colorcheckbox orange ng-scope",
+      "placeholder": "",
+      "label": "Orange"
+    },
+    {
+      "index": 64,
+      "type": "checkbox",
+      "name": "",
+      "id": "ec-6",
+      "className": "colorcheckbox gelb ng-scope",
+      "placeholder": "",
+      "label": "Gelb"
+    },
+    {
+      "index": 65,
+      "type": "checkbox",
+      "name": "",
+      "id": "ec-8",
+      "className": "colorcheckbox beige ng-scope",
+      "placeholder": "",
+      "label": "Beige"
+    },
+    {
+      "index": 66,
+      "type": "checkbox",
+      "name": "",
+      "id": "ec-10",
+      "className": "colorcheckbox braun ng-scope",
+      "placeholder": "",
+      "label": "Braun"
+    },
+    {
+      "index": 67,
+      "type": "checkbox",
+      "name": "",
+      "id": "ec-0",
+      "className": "colorcheckbox andere ng-scope",
+      "placeholder": "",
+      "label": "Andere"
+    },
+    {
+      "index": 68,
+      "type": "checkbox",
+      "name": "",
+      "id": "ec-9",
+      "className": "colorcheckbox violett ng-scope",
+      "placeholder": "",
+      "label": "Violett"
+    },
+    {
+      "index": 69,
+      "type": "checkbox",
+      "name": "",
+      "id": "ec-21",
+      "className": "colorcheckbox bronze ng-scope",
+      "placeholder": "",
+      "label": "Bronze"
+    },
+    {
+      "index": 70,
+      "type": "checkbox",
+      "name": "",
+      "id": "ec-20",
+      "className": "colorcheckbox anthrazit ng-scope",
+      "placeholder": "",
+      "label": "Anthrazit"
+    },
+    {
+      "index": 71,
+      "type": "checkbox",
+      "name": "",
+      "id": "ec-13",
+      "className": "colorcheckbox gold ng-scope",
+      "placeholder": "",
+      "label": "Gold"
+    },
+    {
+      "index": 72,
+      "type": "checkbox",
+      "name": "",
+      "id": "ec-17",
+      "className": "colorcheckbox dunkelblau ng-scope",
+      "placeholder": "",
+      "label": "Dunkelblau"
+    },
+    {
+      "index": 73,
+      "type": "checkbox",
+      "name": "",
+      "id": "ec-14",
+      "className": "colorcheckbox hellblau ng-scope",
+      "placeholder": "",
+      "label": "Hellblau"
+    },
+    {
+      "index": 74,
+      "type": "checkbox",
+      "name": "",
+      "id": "ec-18",
+      "className": "colorcheckbox dunkelgruen ng-scope",
+      "placeholder": "",
+      "label": "Dunkelgruen"
+    },
+    {
+      "index": 75,
+      "type": "checkbox",
+      "name": "",
+      "id": "ec-15",
+      "className": "colorcheckbox hellgrau ng-scope",
+      "placeholder": "",
+      "label": "Hellgrau"
+    },
+    {
+      "index": 76,
+      "type": "checkbox",
+      "name": "",
+      "id": "ec-16",
+      "className": "colorcheckbox hellgruen ng-scope",
+      "placeholder": "",
+      "label": "Hellgruen"
+    },
+    {
+      "index": 77,
+      "type": "checkbox",
+      "name": "",
+      "id": "ec-19",
+      "className": "colorcheckbox dunkelrot ng-scope",
+      "placeholder": "",
+      "label": "Dunkelrot"
+    },
+    {
+      "index": 78,
+      "type": "checkbox",
+      "name": "",
+      "id": "ec-metallic",
+      "className": "colorcheckbox metallic ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Metallic"
+    },
+    {
+      "index": 79,
+      "type": "checkbox",
+      "name": "",
+      "id": "ic-2",
+      "className": "colorcheckbox schwarz ng-scope",
+      "placeholder": "",
+      "label": "Schwarz"
+    },
+    {
+      "index": 80,
+      "type": "checkbox",
+      "name": "",
+      "id": "ic-11",
+      "className": "colorcheckbox grau ng-scope",
+      "placeholder": "",
+      "label": "Grau"
+    },
+    {
+      "index": 81,
+      "type": "checkbox",
+      "name": "",
+      "id": "ic-10",
+      "className": "colorcheckbox braun ng-scope",
+      "placeholder": "",
+      "label": "Braun"
+    },
+    {
+      "index": 82,
+      "type": "checkbox",
+      "name": "",
+      "id": "ic-8",
+      "className": "colorcheckbox beige ng-scope",
+      "placeholder": "",
+      "label": "Beige"
+    },
+    {
+      "index": 83,
+      "type": "checkbox",
+      "name": "",
+      "id": "ic-0",
+      "className": "colorcheckbox andere ng-scope",
+      "placeholder": "",
+      "label": "Andere"
+    },
+    {
+      "index": 84,
+      "type": "checkbox",
+      "name": "",
+      "id": "ic-20",
+      "className": "colorcheckbox anthrazit ng-scope",
+      "placeholder": "",
+      "label": "Anthrazit"
+    },
+    {
+      "index": 85,
+      "type": "checkbox",
+      "name": "",
+      "id": "ic-5",
+      "className": "colorcheckbox blau ng-scope",
+      "placeholder": "",
+      "label": "Blau"
+    },
+    {
+      "index": 86,
+      "type": "checkbox",
+      "name": "",
+      "id": "ic-3",
+      "className": "colorcheckbox rot ng-scope",
+      "placeholder": "",
+      "label": "Rot"
+    },
+    {
+      "index": 87,
+      "type": "checkbox",
+      "name": "",
+      "id": "ic-1",
+      "className": "colorcheckbox weiss ng-scope",
+      "placeholder": "",
+      "label": "Weiss"
+    },
+    {
+      "index": 88,
+      "type": "checkbox",
+      "name": "",
+      "id": "ic-15",
+      "className": "colorcheckbox hellgrau ng-scope",
+      "placeholder": "",
+      "label": "Hellgrau"
+    },
+    {
+      "index": 89,
+      "type": "checkbox",
+      "name": "",
+      "id": "ic-17",
+      "className": "colorcheckbox dunkelblau ng-scope",
+      "placeholder": "",
+      "label": "Dunkelblau"
+    },
+    {
+      "index": 90,
+      "type": "checkbox",
+      "name": "",
+      "id": "ic-4",
+      "className": "colorcheckbox gruen ng-scope",
+      "placeholder": "",
+      "label": "Gruen"
+    },
+    {
+      "index": 91,
+      "type": "checkbox",
+      "name": "",
+      "id": "ic-12",
+      "className": "colorcheckbox silber ng-scope",
+      "placeholder": "",
+      "label": "Silber"
+    },
+    {
+      "index": 92,
+      "type": "checkbox",
+      "name": "",
+      "id": "ic-9",
+      "className": "colorcheckbox violett ng-scope",
+      "placeholder": "",
+      "label": "Violett"
+    },
+    {
+      "index": 93,
+      "type": "checkbox",
+      "name": "",
+      "id": "ic-19",
+      "className": "colorcheckbox dunkelrot ng-scope",
+      "placeholder": "",
+      "label": "Dunkelrot"
+    },
+    {
+      "index": 94,
+      "type": "checkbox",
+      "name": "",
+      "id": "ic-7",
+      "className": "colorcheckbox orange ng-scope",
+      "placeholder": "",
+      "label": "Orange"
+    },
+    {
+      "index": 95,
+      "type": "checkbox",
+      "name": "",
+      "id": "ic-18",
+      "className": "colorcheckbox dunkelgruen ng-scope",
+      "placeholder": "",
+      "label": "Dunkelgruen"
+    },
+    {
+      "index": 96,
+      "type": "checkbox",
+      "name": "",
+      "id": "ic-6",
+      "className": "colorcheckbox gelb ng-scope",
+      "placeholder": "",
+      "label": "Gelb"
+    },
+    {
+      "index": 97,
+      "type": "checkbox",
+      "name": "",
+      "id": "ic-16",
+      "className": "colorcheckbox hellgruen ng-scope",
+      "placeholder": "",
+      "label": "Hellgruen"
+    },
+    {
+      "index": 98,
+      "type": "checkbox",
+      "name": "",
+      "id": "ic-14",
+      "className": "colorcheckbox hellblau ng-scope",
+      "placeholder": "",
+      "label": "Hellblau"
+    },
+    {
+      "index": 99,
+      "type": "checkbox",
+      "name": "",
+      "id": "ic-21",
+      "className": "colorcheckbox bronze ng-scope",
+      "placeholder": "",
+      "label": "Bronze"
+    },
+    {
+      "index": 100,
+      "type": "select-one",
+      "name": "",
+      "id": "",
+      "className": "form-control form-control--combobox form-control form-control--combobox form-control form-control--combobox",
+      "options": [
+        {
+          "value": "number:9",
+          "text": "Alcantara"
+        },
+        {
+          "value": "number:0",
+          "text": "andere"
+        },
+        {
+          "value": "number:3",
+          "text": "Kunstleder"
+        },
+        {
+          "value": "number:4",
+          "text": "Leder"
+        },
+        {
+          "value": "number:7",
+          "text": "Leder designo"
+        },
+        {
+          "value": "number:5",
+          "text": "Leder exclusiv"
+        },
+        {
+          "value": "number:6",
+          "text": "Leder nappa"
+        },
+        {
+          "value": "number:1",
+          "text": "Stoff"
+        },
+        {
+          "value": "number:8",
+          "text": "Teilleder"
+        },
+        {
+          "value": "number:2",
+          "text": "Velours"
+        },
+        {
+          "value": "number:10",
+          "text": "Wildleder"
+        }
+      ],
+      "optionCount": 11,
+      "nearbyText": "Material der Innenausstattung"
+    },
+    {
+      "index": 101,
+      "type": "checkbox",
+      "name": "",
+      "id": "fe1",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Elektr. Heckklappe"
+    },
+    {
+      "index": 102,
+      "type": "checkbox",
+      "name": "",
+      "id": "fe2",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Einparkhilfe"
+    },
+    {
+      "index": 103,
+      "type": "checkbox",
+      "name": "",
+      "id": "fe3",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Rückfahrkamera"
+    },
+    {
+      "index": 104,
+      "type": "checkbox",
+      "name": "",
+      "id": "fe4",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Schiebedach"
+    },
+    {
+      "index": 105,
+      "type": "checkbox",
+      "name": "",
+      "id": "fe5",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Lichtsensor"
+    },
+    {
+      "index": 106,
+      "type": "checkbox",
+      "name": "",
+      "id": "fe6",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Totwinkelassistent"
+    },
+    {
+      "index": 107,
+      "type": "checkbox",
+      "name": "",
+      "id": "fe7",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Anhängerkupplung"
+    },
+    {
+      "index": 108,
+      "type": "checkbox",
+      "name": "",
+      "id": "fe8",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Klimaanlage"
+    },
+    {
+      "index": 109,
+      "type": "checkbox",
+      "name": "",
+      "id": "fe9",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Freisprecheinrichtung"
+    },
+    {
+      "index": 110,
+      "type": "checkbox",
+      "name": "",
+      "id": "fe10",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Bluetooth"
+    },
+    {
+      "index": 111,
+      "type": "checkbox",
+      "name": "",
+      "id": "fe11",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Navigationssystem"
+    },
+    {
+      "index": 112,
+      "type": "checkbox",
+      "name": "",
+      "id": "fe12",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Sitzheizung"
+    },
+    {
+      "index": 113,
+      "type": "checkbox",
+      "name": "",
+      "id": "fe13",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Regensensor"
+    },
+    {
+      "index": 114,
+      "type": "checkbox",
+      "name": "",
+      "id": "fe14",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Start-Stop-Automatik"
+    },
+    {
+      "index": 115,
+      "type": "checkbox",
+      "name": "",
+      "id": "fe15",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Tempomat"
+    },
+    {
+      "index": 116,
+      "type": "checkbox",
+      "name": "",
+      "id": "fe16",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Garantie"
+    },
+    {
+      "index": 117,
+      "type": "checkbox",
+      "name": "",
+      "id": "57",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Adaptives Dämpfungssystem"
+    },
+    {
+      "index": 118,
+      "type": "checkbox",
+      "name": "",
+      "id": "14",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Allrad"
+    },
+    {
+      "index": 119,
+      "type": "checkbox",
+      "name": "",
+      "id": "1004",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Bidirektionales Laden"
+    },
+    {
+      "index": 120,
+      "type": "checkbox",
+      "name": "",
+      "id": "34",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Bordcomputer"
+    },
+    {
+      "index": 121,
+      "type": "checkbox",
+      "name": "",
+      "id": "311",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Digitales Kombiinstrument"
+    },
+    {
+      "index": 122,
+      "type": "checkbox",
+      "name": "",
+      "id": "1002",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Keramikbremse"
+    },
+    {
+      "index": 123,
+      "type": "checkbox",
+      "name": "",
+      "id": "284",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Luftfederung"
+    },
+    {
+      "index": 124,
+      "type": "checkbox",
+      "name": "",
+      "id": "41",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Niveauregulierung"
+    },
+    {
+      "index": 125,
+      "type": "checkbox",
+      "name": "",
+      "id": "76",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Partikelfilter"
+    },
+    {
+      "index": 126,
+      "type": "checkbox",
+      "name": "",
+      "id": "316",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Range Extender"
+    },
+    {
+      "index": 127,
+      "type": "checkbox",
+      "name": "",
+      "id": "297",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Schaltwippen"
+    },
+    {
+      "index": 128,
+      "type": "checkbox",
+      "name": "",
+      "id": "42",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Sperrdifferential"
+    },
+    {
+      "index": 129,
+      "type": "checkbox",
+      "name": "",
+      "id": "285",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Sportabgasanlage"
+    },
+    {
+      "index": 130,
+      "type": "checkbox",
+      "name": "",
+      "id": "250",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Start-Stop-Automatik"
+    },
+    {
+      "index": 131,
+      "type": "checkbox",
+      "name": "",
+      "id": "1003",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Wärmepumpe"
+    },
+    {
+      "index": 132,
+      "type": "checkbox",
+      "name": "",
+      "id": "290",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Ambientebeleuchtung"
+    },
+    {
+      "index": 133,
+      "type": "checkbox",
+      "name": "",
+      "id": "1006",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Außenspiegel el. anklappbar"
+    },
+    {
+      "index": 134,
+      "type": "checkbox",
+      "name": "",
+      "id": "228",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Beheizbare Frontscheibe"
+    },
+    {
+      "index": 135,
+      "type": "checkbox",
+      "name": "",
+      "id": "67",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Einstellbare Lenksäule"
+    },
+    {
+      "index": 136,
+      "type": "checkbox",
+      "name": "",
+      "id": "23",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Elektr. Außenspiegel"
+    },
+    {
+      "index": 137,
+      "type": "checkbox",
+      "name": "",
+      "id": "8",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Elektr. Fensterheber"
+    },
+    {
+      "index": 138,
+      "type": "checkbox",
+      "name": "",
+      "id": "223",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Elektr. Fondsitzverstellung"
+    },
+    {
+      "index": 139,
+      "type": "checkbox",
+      "name": "",
+      "id": "225",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Elektr. Heckklappe"
+    },
+    {
+      "index": 140,
+      "type": "checkbox",
+      "name": "",
+      "id": "226",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Elektr. Schiebetüren"
+    },
+    {
+      "index": 141,
+      "type": "checkbox",
+      "name": "",
+      "id": "52",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Elektr. Sitze"
+    },
+    {
+      "index": 142,
+      "type": "checkbox",
+      "name": "",
+      "id": "207",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Elektr. Verdeck"
+    },
+    {
+      "index": 143,
+      "type": "checkbox",
+      "name": "",
+      "id": "324",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Funkfernbedienung"
+    },
+    {
+      "index": 144,
+      "type": "checkbox",
+      "name": "",
+      "id": "315",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Geschwindigkeitsbegrenzer"
+    },
+    {
+      "index": 145,
+      "type": "checkbox",
+      "name": "",
+      "id": "68",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Heckrollo"
+    },
+    {
+      "index": 146,
+      "type": "checkbox",
+      "name": "",
+      "id": "64",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Innenraumfilter"
+    },
+    {
+      "index": 147,
+      "type": "checkbox",
+      "name": "",
+      "id": "275",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Keyless Entry"
+    },
+    {
+      "index": 148,
+      "type": "checkbox",
+      "name": "",
+      "id": "49",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Keyless Go"
+    },
+    {
+      "index": 149,
+      "type": "checkbox",
+      "name": "",
+      "id": "1",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Klimaanlage"
+    },
+    {
+      "index": 150,
+      "type": "checkbox",
+      "name": "",
+      "id": "2",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Klimaautomatik"
+    },
+    {
+      "index": 151,
+      "type": "checkbox",
+      "name": "",
+      "id": "318",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Klimaautomatik-2-Zonen"
+    },
+    {
+      "index": 152,
+      "type": "checkbox",
+      "name": "",
+      "id": "319",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Klimaautomatik-3-Zonen"
+    },
+    {
+      "index": 153,
+      "type": "checkbox",
+      "name": "",
+      "id": "320",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Klimaautomatik-4-Zonen"
+    },
+    {
+      "index": 154,
+      "type": "checkbox",
+      "name": "",
+      "id": "241",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Klimasitze"
+    },
+    {
+      "index": 155,
+      "type": "checkbox",
+      "name": "",
+      "id": "9",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Lederausstattung"
+    },
+    {
+      "index": 156,
+      "type": "checkbox",
+      "name": "",
+      "id": "295",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Lederlenkrad"
+    },
+    {
+      "index": 157,
+      "type": "checkbox",
+      "name": "",
+      "id": "257",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Lenkradheizung"
+    },
+    {
+      "index": 158,
+      "type": "checkbox",
+      "name": "",
+      "id": "291",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Lordosenstütze"
+    },
+    {
+      "index": 159,
+      "type": "checkbox",
+      "name": "",
+      "id": "210",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Massagesitze"
+    },
+    {
+      "index": 160,
+      "type": "checkbox",
+      "name": "",
+      "id": "262",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Mehrzonenklimaautomatik"
+    },
+    {
+      "index": 161,
+      "type": "checkbox",
+      "name": "",
+      "id": "289",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Memory Sitze"
+    },
+    {
+      "index": 162,
+      "type": "checkbox",
+      "name": "",
+      "id": "61",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Mittelarmlehne"
+    },
+    {
+      "index": 163,
+      "type": "checkbox",
+      "name": "",
+      "id": "47",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Multifunktionslenkrad"
+    },
+    {
+      "index": 164,
+      "type": "checkbox",
+      "name": "",
+      "id": "35",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Park Distance Control"
+    },
+    {
+      "index": 165,
+      "type": "checkbox",
+      "name": "",
+      "id": "206",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Park Distance Control vo.&hi."
+    },
+    {
+      "index": 166,
+      "type": "checkbox",
+      "name": "",
+      "id": "208",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Seitenrollo"
+    },
+    {
+      "index": 167,
+      "type": "checkbox",
+      "name": "",
+      "id": "5",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Servolenkung"
+    },
+    {
+      "index": 168,
+      "type": "checkbox",
+      "name": "",
+      "id": "17",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Sitzheizung"
+    },
+    {
+      "index": 169,
+      "type": "checkbox",
+      "name": "",
+      "id": "298",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Sitzheizung hinten"
+    },
+    {
+      "index": 170,
+      "type": "checkbox",
+      "name": "",
+      "id": "75",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Sportsitze"
+    },
+    {
+      "index": 171,
+      "type": "checkbox",
+      "name": "",
+      "id": "46",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Standheizung"
+    },
+    {
+      "index": 172,
+      "type": "checkbox",
+      "name": "",
+      "id": "24",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Teilbare Rücksitzlehne"
+    },
+    {
+      "index": 173,
+      "type": "checkbox",
+      "name": "",
+      "id": "32",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Tempomat"
+    },
+    {
+      "index": 174,
+      "type": "checkbox",
+      "name": "",
+      "id": "313",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Umklappbarer Beifahrersitz"
+    },
+    {
+      "index": 175,
+      "type": "checkbox",
+      "name": "",
+      "id": "7",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Zentralverriegelung"
+    },
+    {
+      "index": 176,
+      "type": "checkbox",
+      "name": "",
+      "id": "288",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "360 Grad Kamera"
+    },
+    {
+      "index": 177,
+      "type": "checkbox",
+      "name": "",
+      "id": "51",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Adaptives Kurvenlicht"
+    },
+    {
+      "index": 178,
+      "type": "checkbox",
+      "name": "",
+      "id": "55",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Autom. abblend. Innenspiegel"
+    },
+    {
+      "index": 179,
+      "type": "checkbox",
+      "name": "",
+      "id": "70",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Beheizbare Außenspiegel"
+    },
+    {
+      "index": 180,
+      "type": "checkbox",
+      "name": "",
+      "id": "201",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Bi-Xenon Scheinwerfer"
+    },
+    {
+      "index": 181,
+      "type": "checkbox",
+      "name": "",
+      "id": "304",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Blendfreies Fernlicht"
+    },
+    {
+      "index": 182,
+      "type": "checkbox",
+      "name": "",
+      "id": "54",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Colorverglasung"
+    },
+    {
+      "index": 183,
+      "type": "checkbox",
+      "name": "",
+      "id": "243",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Dynamisches Kurvenlicht"
+    },
+    {
+      "index": 184,
+      "type": "checkbox",
+      "name": "",
+      "id": "204",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "HEAD-UP-Display"
+    },
+    {
+      "index": 185,
+      "type": "checkbox",
+      "name": "",
+      "id": "303",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Laserlicht"
+    },
+    {
+      "index": 186,
+      "type": "checkbox",
+      "name": "",
+      "id": "202",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "LED-Hauptscheinwerfer"
+    },
+    {
+      "index": 187,
+      "type": "checkbox",
+      "name": "",
+      "id": "203",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "LED-Rückleuchten"
+    },
+    {
+      "index": 188,
+      "type": "checkbox",
+      "name": "",
+      "id": "238",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "LED-Tagfahrlicht"
+    },
+    {
+      "index": 189,
+      "type": "checkbox",
+      "name": "",
+      "id": "15",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Nebelscheinwerfer"
+    },
+    {
+      "index": 190,
+      "type": "checkbox",
+      "name": "",
+      "id": "293",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Privacyverglasung"
+    },
+    {
+      "index": 191,
+      "type": "checkbox",
+      "name": "",
+      "id": "205",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Rückfahrkamera"
+    },
+    {
+      "index": 192,
+      "type": "checkbox",
+      "name": "",
+      "id": "45",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Scheinwerferregulierung"
+    },
+    {
+      "index": 193,
+      "type": "checkbox",
+      "name": "",
+      "id": "62",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Scheinwerferreinigung"
+    },
+    {
+      "index": 194,
+      "type": "checkbox",
+      "name": "",
+      "id": "249",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Tagfahrlicht"
+    },
+    {
+      "index": 195,
+      "type": "checkbox",
+      "name": "",
+      "id": "1007",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Virtuelle Seitenspiegel"
+    },
+    {
+      "index": 196,
+      "type": "checkbox",
+      "name": "",
+      "id": "36",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Xenon Scheinwerfer"
+    },
+    {
+      "index": 197,
+      "type": "checkbox",
+      "name": "",
+      "id": "3",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "ABS"
+    },
+    {
+      "index": 198,
+      "type": "checkbox",
+      "name": "",
+      "id": "4",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Airbag"
+    },
+    {
+      "index": 199,
+      "type": "checkbox",
+      "name": "",
+      "id": "329",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Airbag hinten"
+    },
+    {
+      "index": 200,
+      "type": "checkbox",
+      "name": "",
+      "id": "27",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Alarmanlage"
+    },
+    {
+      "index": 201,
+      "type": "checkbox",
+      "name": "",
+      "id": "292",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Anhängerstabilisierung"
+    },
+    {
+      "index": 202,
+      "type": "checkbox",
+      "name": "",
+      "id": "40",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Antriebsschlupfregelung"
+    },
+    {
+      "index": 203,
+      "type": "checkbox",
+      "name": "",
+      "id": "11",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Beifahrerairbag"
+    },
+    {
+      "index": 204,
+      "type": "checkbox",
+      "name": "",
+      "id": "33",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "ESP"
+    },
+    {
+      "index": 205,
+      "type": "checkbox",
+      "name": "",
+      "id": "71",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Integrierte Kindersitze"
+    },
+    {
+      "index": 206,
+      "type": "checkbox",
+      "name": "",
+      "id": "317",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Isofix Beifahrersitz"
+    },
+    {
+      "index": 207,
+      "type": "checkbox",
+      "name": "",
+      "id": "246",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "ISOFIX Kindersitzbefestigung"
+    },
+    {
+      "index": 208,
+      "type": "checkbox",
+      "name": "",
+      "id": "237",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Knieairbag"
+    },
+    {
+      "index": 209,
+      "type": "checkbox",
+      "name": "",
+      "id": "124",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Kopfairbag"
+    },
+    {
+      "index": 210,
+      "type": "checkbox",
+      "name": "",
+      "id": "307",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Notrad"
+    },
+    {
+      "index": 211,
+      "type": "checkbox",
+      "name": "",
+      "id": "296",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Notrufsystem"
+    },
+    {
+      "index": 212,
+      "type": "checkbox",
+      "name": "",
+      "id": "227",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Panik Alarmfunktion"
+    },
+    {
+      "index": 213,
+      "type": "checkbox",
+      "name": "",
+      "id": "306",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Pannenkit"
+    },
+    {
+      "index": 214,
+      "type": "checkbox",
+      "name": "",
+      "id": "44",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Reifendruckkontrolle"
+    },
+    {
+      "index": 215,
+      "type": "checkbox",
+      "name": "",
+      "id": "19",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Seitenairbags"
+    },
+    {
+      "index": 216,
+      "type": "checkbox",
+      "name": "",
+      "id": "53",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Traktionskontrolle"
+    },
+    {
+      "index": 217,
+      "type": "checkbox",
+      "name": "",
+      "id": "16",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Wegfahrsperre"
+    },
+    {
+      "index": 218,
+      "type": "checkbox",
+      "name": "",
+      "id": "99",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Zusatzscheinwerfer"
+    },
+    {
+      "index": 219,
+      "type": "checkbox",
+      "name": "",
+      "id": "287",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Abstands-/Kollisionswarner"
+    },
+    {
+      "index": 220,
+      "type": "checkbox",
+      "name": "",
+      "id": "211",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Abstandsregeltempomat"
+    },
+    {
+      "index": 221,
+      "type": "checkbox",
+      "name": "",
+      "id": "1005",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Anhängerrangierassistent"
+    },
+    {
+      "index": 222,
+      "type": "checkbox",
+      "name": "",
+      "id": "286",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Ausparkassistent"
+    },
+    {
+      "index": 223,
+      "type": "checkbox",
+      "name": "",
+      "id": "261",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Bergabfahrassistent"
+    },
+    {
+      "index": 224,
+      "type": "checkbox",
+      "name": "",
+      "id": "258",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Berganfahrassistent"
+    },
+    {
+      "index": 225,
+      "type": "checkbox",
+      "name": "",
+      "id": "242",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Fernlichtassistent"
+    },
+    {
+      "index": 226,
+      "type": "checkbox",
+      "name": "",
+      "id": "247",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Lichtsensor"
+    },
+    {
+      "index": 227,
+      "type": "checkbox",
+      "name": "",
+      "id": "264",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Müdigkeitserkennung"
+    },
+    {
+      "index": 228,
+      "type": "checkbox",
+      "name": "",
+      "id": "215",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Nachtsichtassistent"
+    },
+    {
+      "index": 229,
+      "type": "checkbox",
+      "name": "",
+      "id": "260",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Notbremsassistent"
+    },
+    {
+      "index": 230,
+      "type": "checkbox",
+      "name": "",
+      "id": "236",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Parklenkassistent"
+    },
+    {
+      "index": 231,
+      "type": "checkbox",
+      "name": "",
+      "id": "69",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Regensensor"
+    },
+    {
+      "index": 232,
+      "type": "checkbox",
+      "name": "",
+      "id": "263",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Spurhalteassistent"
+    },
+    {
+      "index": 233,
+      "type": "checkbox",
+      "name": "",
+      "id": "274",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Spurwechselassistent"
+    },
+    {
+      "index": 234,
+      "type": "checkbox",
+      "name": "",
+      "id": "259",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Totwinkelassistent"
+    },
+    {
+      "index": 235,
+      "type": "checkbox",
+      "name": "",
+      "id": "265",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Verkehrszeichenerkennung"
+    },
+    {
+      "index": 236,
+      "type": "checkbox",
+      "name": "",
+      "id": "278",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Android Auto"
+    },
+    {
+      "index": 237,
+      "type": "checkbox",
+      "name": "",
+      "id": "277",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Apple CarPlay"
+    },
+    {
+      "index": 238,
+      "type": "checkbox",
+      "name": "",
+      "id": "219",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "AUX-In"
+    },
+    {
+      "index": 239,
+      "type": "checkbox",
+      "name": "",
+      "id": "232",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Bang und Olufsen"
+    },
+    {
+      "index": 240,
+      "type": "checkbox",
+      "name": "",
+      "id": "245",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Bluetooth"
+    },
+    {
+      "index": 241,
+      "type": "checkbox",
+      "name": "",
+      "id": "229",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Bose"
+    },
+    {
+      "index": 242,
+      "type": "checkbox",
+      "name": "",
+      "id": "283",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Bowers & Wilkins"
+    },
+    {
+      "index": 243,
+      "type": "checkbox",
+      "name": "",
+      "id": "255",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Burmester"
+    },
+    {
+      "index": 244,
+      "type": "checkbox",
+      "name": "",
+      "id": "26",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "CD"
+    },
+    {
+      "index": 245,
+      "type": "checkbox",
+      "name": "",
+      "id": "63",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "CD-Wechsler"
+    },
+    {
+      "index": 246,
+      "type": "checkbox",
+      "name": "",
+      "id": "280",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "DAB"
+    },
+    {
+      "index": 247,
+      "type": "checkbox",
+      "name": "",
+      "id": "218",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "DVD-Anlage"
+    },
+    {
+      "index": 248,
+      "type": "checkbox",
+      "name": "",
+      "id": "254",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Dynaudio"
+    },
+    {
+      "index": 249,
+      "type": "checkbox",
+      "name": "",
+      "id": "253",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Freisprecheinrichtung"
+    },
+    {
+      "index": 250,
+      "type": "checkbox",
+      "name": "",
+      "id": "230",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Harman Kardon"
+    },
+    {
+      "index": 251,
+      "type": "checkbox",
+      "name": "",
+      "id": "310",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Induktionsladen"
+    },
+    {
+      "index": 252,
+      "type": "checkbox",
+      "name": "",
+      "id": "231",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "JBL"
+    },
+    {
+      "index": 253,
+      "type": "checkbox",
+      "name": "",
+      "id": "66",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Kommunikationspaket"
+    },
+    {
+      "index": 254,
+      "type": "checkbox",
+      "name": "",
+      "id": "234",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Mark Levinson"
+    },
+    {
+      "index": 255,
+      "type": "checkbox",
+      "name": "",
+      "id": "282",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Meridian"
+    },
+    {
+      "index": 256,
+      "type": "checkbox",
+      "name": "",
+      "id": "217",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Monitore in Kopfstützen"
+    },
+    {
+      "index": 257,
+      "type": "checkbox",
+      "name": "",
+      "id": "221",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "MP3"
+    },
+    {
+      "index": 258,
+      "type": "checkbox",
+      "name": "",
+      "id": "312",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Musikstreaming"
+    },
+    {
+      "index": 259,
+      "type": "checkbox",
+      "name": "",
+      "id": "18",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Navigationssystem"
+    },
+    {
+      "index": 260,
+      "type": "checkbox",
+      "name": "",
+      "id": "1008",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Navigationsvorbereitung"
+    },
+    {
+      "index": 261,
+      "type": "checkbox",
+      "name": "",
+      "id": "125",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Radio"
+    },
+    {
+      "index": 262,
+      "type": "checkbox",
+      "name": "",
+      "id": "12",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Radio Kassette"
+    },
+    {
+      "index": 263,
+      "type": "checkbox",
+      "name": "",
+      "id": "48",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Soundsystem"
+    },
+    {
+      "index": 264,
+      "type": "checkbox",
+      "name": "",
+      "id": "279",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Sprachsteuerung"
+    },
+    {
+      "index": 265,
+      "type": "checkbox",
+      "name": "",
+      "id": "200",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Telefonvorbereitung"
+    },
+    {
+      "index": 266,
+      "type": "checkbox",
+      "name": "",
+      "id": "299",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Touchscreen"
+    },
+    {
+      "index": 267,
+      "type": "checkbox",
+      "name": "",
+      "id": "216",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "TV-Funktion"
+    },
+    {
+      "index": 268,
+      "type": "checkbox",
+      "name": "",
+      "id": "220",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "USB-Anschluss"
+    },
+    {
+      "index": 269,
+      "type": "checkbox",
+      "name": "",
+      "id": "281",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "WLAN"
+    },
+    {
+      "index": 270,
+      "type": "checkbox",
+      "name": "",
+      "id": "74",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Dekra Siegel"
+    },
+    {
+      "index": 271,
+      "type": "checkbox",
+      "name": "",
+      "id": "37",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Garantie"
+    },
+    {
+      "index": 272,
+      "type": "checkbox",
+      "name": "",
+      "id": "77",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "GW Plus"
+    },
+    {
+      "index": 273,
+      "type": "checkbox",
+      "name": "",
+      "id": "214",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "HU/AU neu"
+    },
+    {
+      "index": 274,
+      "type": "checkbox",
+      "name": "",
+      "id": "1009",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Inspektion neu"
+    },
+    {
+      "index": 275,
+      "type": "checkbox",
+      "name": "",
+      "id": "43",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Scheckheftgepflegt"
+    },
+    {
+      "index": 276,
+      "type": "checkbox",
+      "name": "",
+      "id": "224",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Abnehmbare Anhängerkupplung"
+    },
+    {
+      "index": 277,
+      "type": "checkbox",
+      "name": "",
+      "id": "301",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Allwetterreifen"
+    },
+    {
+      "index": 278,
+      "type": "checkbox",
+      "name": "",
+      "id": "38",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Alufelgen"
+    },
+    {
+      "index": 279,
+      "type": "checkbox",
+      "name": "",
+      "id": "1012",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Anhängerk. Vorbereitung"
+    },
+    {
+      "index": 280,
+      "type": "checkbox",
+      "name": "",
+      "id": "13",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Anhängerkupplung"
+    },
+    {
+      "index": 281,
+      "type": "checkbox",
+      "name": "",
+      "id": "30",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Behindertengerecht"
+    },
+    {
+      "index": 282,
+      "type": "checkbox",
+      "name": "",
+      "id": "111",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Beleuchtungseinrichtung"
+    },
+    {
+      "index": 283,
+      "type": "checkbox",
+      "name": "",
+      "id": "251",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Beschädigtes Fahrzeug"
+    },
+    {
+      "index": 284,
+      "type": "checkbox",
+      "name": "",
+      "id": "58",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Dachreling"
+    },
+    {
+      "index": 285,
+      "type": "checkbox",
+      "name": "",
+      "id": "94",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Dachspoiler"
+    },
+    {
+      "index": 286,
+      "type": "checkbox",
+      "name": "",
+      "id": "39",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Dachträger"
+    },
+    {
+      "index": 287,
+      "type": "checkbox",
+      "name": "",
+      "id": "240",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "El. klappbare Anhängerkupplung"
+    },
+    {
+      "index": 288,
+      "type": "checkbox",
+      "name": "",
+      "id": "213",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Elektr. Panoramadach"
+    },
+    {
+      "index": 289,
+      "type": "checkbox",
+      "name": "",
+      "id": "256",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Elektrische Parkbremse"
+    },
+    {
+      "index": 290,
+      "type": "checkbox",
+      "name": "",
+      "id": "267",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Elektrostarter"
+    },
+    {
+      "index": 291,
+      "type": "checkbox",
+      "name": "",
+      "id": "294",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Fahrerprofilauswahl"
+    },
+    {
+      "index": 292,
+      "type": "checkbox",
+      "name": "",
+      "id": "122",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Fahrerschlafplatz"
+    },
+    {
+      "index": 293,
+      "type": "checkbox",
+      "name": "",
+      "id": "110",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Fahrwerk"
+    },
+    {
+      "index": 294,
+      "type": "checkbox",
+      "name": "",
+      "id": "235",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Faltdach"
+    },
+    {
+      "index": 295,
+      "type": "checkbox",
+      "name": "",
+      "id": "59",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Gepäckraumabdeckung"
+    },
+    {
+      "index": 296,
+      "type": "checkbox",
+      "name": "",
+      "id": "314",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Gepäckraumabtrennung"
+    },
+    {
+      "index": 297,
+      "type": "checkbox",
+      "name": "",
+      "id": "123",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Greiferhydraulik"
+    },
+    {
+      "index": 298,
+      "type": "checkbox",
+      "name": "",
+      "id": "60",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Hardtop"
+    },
+    {
+      "index": 299,
+      "type": "checkbox",
+      "name": "",
+      "id": "272",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Heizgriffe"
+    },
+    {
+      "index": 300,
+      "type": "checkbox",
+      "name": "",
+      "id": "50",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Holzausstattung"
+    },
+    {
+      "index": 301,
+      "type": "checkbox",
+      "name": "",
+      "id": "86",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Hydraulik"
+    },
+    {
+      "index": 302,
+      "type": "checkbox",
+      "name": "",
+      "id": "1010",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Im Kundenauftrag"
+    },
+    {
+      "index": 303,
+      "type": "checkbox",
+      "name": "",
+      "id": "87",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Kabine"
+    },
+    {
+      "index": 304,
+      "type": "checkbox",
+      "name": "",
+      "id": "6",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Katalysator"
+    },
+    {
+      "index": 305,
+      "type": "checkbox",
+      "name": "",
+      "id": "239",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Klappbare Anhängerkupplung"
+    },
+    {
+      "index": 306,
+      "type": "checkbox",
+      "name": "",
+      "id": "88",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Kompressor"
+    },
+    {
+      "index": 307,
+      "type": "checkbox",
+      "name": "",
+      "id": "89",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Kran"
+    },
+    {
+      "index": 308,
+      "type": "checkbox",
+      "name": "",
+      "id": "116",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Kühlaggregat"
+    },
+    {
+      "index": 309,
+      "type": "checkbox",
+      "name": "",
+      "id": "90",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Ladeboardwand"
+    },
+    {
+      "index": 310,
+      "type": "checkbox",
+      "name": "",
+      "id": "119",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Lastschutzgitter"
+    },
+    {
+      "index": 311,
+      "type": "checkbox",
+      "name": "",
+      "id": "101",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "LKW-Zulassung"
+    },
+    {
+      "index": 312,
+      "type": "checkbox",
+      "name": "",
+      "id": "91",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Lärmarm"
+    },
+    {
+      "index": 313,
+      "type": "checkbox",
+      "name": "",
+      "id": "328",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Markise"
+    },
+    {
+      "index": 314,
+      "type": "checkbox",
+      "name": "",
+      "id": "1011",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Matt-Lackierung"
+    },
+    {
+      "index": 315,
+      "type": "checkbox",
+      "name": "",
+      "id": "252",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Nicht Fahrbereit"
+    },
+    {
+      "index": 316,
+      "type": "checkbox",
+      "name": "",
+      "id": "212",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Panoramadach"
+    },
+    {
+      "index": 317,
+      "type": "checkbox",
+      "name": "",
+      "id": "92",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "PKW-Zulassung"
+    },
+    {
+      "index": 318,
+      "type": "checkbox",
+      "name": "",
+      "id": "1000",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "R-line"
+    },
+    {
+      "index": 319,
+      "type": "checkbox",
+      "name": "",
+      "id": "309",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Raucherpaket"
+    },
+    {
+      "index": 320,
+      "type": "checkbox",
+      "name": "",
+      "id": "327",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Rechtslenker"
+    },
+    {
+      "index": 321,
+      "type": "checkbox",
+      "name": "",
+      "id": "305",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Reserverad"
+    },
+    {
+      "index": 322,
+      "type": "checkbox",
+      "name": "",
+      "id": "100",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Russpartikelfilter"
+    },
+    {
+      "index": 323,
+      "type": "checkbox",
+      "name": "",
+      "id": "1001",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "S-line"
+    },
+    {
+      "index": 324,
+      "type": "checkbox",
+      "name": "",
+      "id": "103",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Sanitäraustattung"
+    },
+    {
+      "index": 325,
+      "type": "checkbox",
+      "name": "",
+      "id": "270",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Scheibe"
+    },
+    {
+      "index": 326,
+      "type": "checkbox",
+      "name": "",
+      "id": "10",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Schiebedach"
+    },
+    {
+      "index": 327,
+      "type": "checkbox",
+      "name": "",
+      "id": "102",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Schiebetür"
+    },
+    {
+      "index": 328,
+      "type": "checkbox",
+      "name": "",
+      "id": "323",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Schiebetür beidseitig"
+    },
+    {
+      "index": 329,
+      "type": "checkbox",
+      "name": "",
+      "id": "322",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Schiebetür links"
+    },
+    {
+      "index": 330,
+      "type": "checkbox",
+      "name": "",
+      "id": "321",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Schiebetür rechts"
+    },
+    {
+      "index": 331,
+      "type": "checkbox",
+      "name": "",
+      "id": "93",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Schutzdach"
+    },
+    {
+      "index": 332,
+      "type": "checkbox",
+      "name": "",
+      "id": "112",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Seilwinde"
+    },
+    {
+      "index": 333,
+      "type": "checkbox",
+      "name": "",
+      "id": "65",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Skisack"
+    },
+    {
+      "index": 334,
+      "type": "checkbox",
+      "name": "",
+      "id": "1023",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Solarpanel"
+    },
+    {
+      "index": 335,
+      "type": "checkbox",
+      "name": "",
+      "id": "300",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Sommerreifen"
+    },
+    {
+      "index": 336,
+      "type": "checkbox",
+      "name": "",
+      "id": "326",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Spoiler"
+    },
+    {
+      "index": 337,
+      "type": "checkbox",
+      "name": "",
+      "id": "29",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Sportausstattung"
+    },
+    {
+      "index": 338,
+      "type": "checkbox",
+      "name": "",
+      "id": "248",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Sportfahrwerk"
+    },
+    {
+      "index": 339,
+      "type": "checkbox",
+      "name": "",
+      "id": "222",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Sportpaket"
+    },
+    {
+      "index": 340,
+      "type": "checkbox",
+      "name": "",
+      "id": "302",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Stahlfelgen"
+    },
+    {
+      "index": 341,
+      "type": "checkbox",
+      "name": "",
+      "id": "73",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Stoßfänger Wagenfarbe"
+    },
+    {
+      "index": 342,
+      "type": "checkbox",
+      "name": "",
+      "id": "271",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Sturzbügel"
+    },
+    {
+      "index": 343,
+      "type": "checkbox",
+      "name": "",
+      "id": "31",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Taxi"
+    },
+    {
+      "index": 344,
+      "type": "checkbox",
+      "name": "",
+      "id": "121",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Toilette"
+    },
+    {
+      "index": 345,
+      "type": "checkbox",
+      "name": "",
+      "id": "266",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Trennwand"
+    },
+    {
+      "index": 346,
+      "type": "checkbox",
+      "name": "",
+      "id": "209",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Trittbretter"
+    },
+    {
+      "index": 347,
+      "type": "checkbox",
+      "name": "",
+      "id": "28",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Tuning"
+    },
+    {
+      "index": 348,
+      "type": "checkbox",
+      "name": "",
+      "id": "96",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "UVV"
+    },
+    {
+      "index": 349,
+      "type": "checkbox",
+      "name": "",
+      "id": "97",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Video"
+    },
+    {
+      "index": 350,
+      "type": "checkbox",
+      "name": "",
+      "id": "72",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Weisse Blinker"
+    },
+    {
+      "index": 351,
+      "type": "checkbox",
+      "name": "",
+      "id": "325",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Windschott"
+    },
+    {
+      "index": 352,
+      "type": "checkbox",
+      "name": "",
+      "id": "308",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Winterpaket"
+    },
+    {
+      "index": 353,
+      "type": "checkbox",
+      "name": "",
+      "id": "56",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Winterreifen"
+    },
+    {
+      "index": 354,
+      "type": "checkbox",
+      "name": "",
+      "id": "o1",
+      "className": "ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Inserate mit Bildern"
+    },
+    {
+      "index": 355,
+      "type": "checkbox",
+      "name": "",
+      "id": "o5",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "Unfallfahrzeug"
+    },
+    {
+      "index": 356,
+      "type": "checkbox",
+      "name": "",
+      "id": "o6",
+      "className": "ng-scope ng-pristine ng-untouched ng-valid",
+      "placeholder": "",
+      "label": "EU-Import"
+    },
+    {
+      "index": 357,
+      "type": "select-one",
+      "name": "",
+      "id": "",
+      "className": "form-control form-control--combobox form-control form-control--combobox form-control form-control--combobox form-control form-control--combobox",
+      "options": [
+        {
+          "value": "string:selected4u",
+          "text": "Alfa Romeo & Jeep SELECTED4U"
+        },
+        {
+          "value": "string:astonmartin",
+          "text": "Aston Martin ASSURED"
+        },
+        {
+          "value": "string:audi",
+          "text": "Audi Gebrauchtwagen:plus"
+        },
+        {
+          "value": "string:bmwmotorrad",
+          "text": "BMW Motorrad Premium Selection"
+        },
+        {
+          "value": "string:bmw",
+          "text": "BMW Premium Selection"
+        },
+        {
+          "value": "string:citroen",
+          "text": "Citroen select"
+        },
+        {
+          "value": "string:dsc",
+          "text": "DS Certified"
+        },
+        {
+          "value": "string:ferrari",
+          "text": "Ferrari Approved"
+        },
+        {
+          "value": "string:ford",
+          "text": "Ford A1 Euro-Garantie"
+        },
+        {
+          "value": "string:hyundai",
+          "text": "Hyundai Promise"
+        },
+        {
+          "value": "string:jaguar",
+          "text": "Jaguar APPROVED"
+        },
+        {
+          "value": "string:kia",
+          "text": "Kia zertifizierte Gebrauchtwagen"
+        },
+        {
+          "value": "string:landrover",
+          "text": "Land Rover APPROVED"
+        },
+        {
+          "value": "string:lexus",
+          "text": "LexusSelect"
+        },
+        {
+          "value": "string:maserati",
+          "text": "MASERATI CERTIFIED PRE-OWNED"
+        },
+        {
+          "value": "string:mercedes",
+          "text": "Mercedes Junge Sterne"
+        },
+        {
+          "value": "string:mini",
+          "text": "MINI NEXT"
+        },
+        {
+          "value": "string:mitsubishi",
+          "text": "Mitsubishi DIAMANT Gebrauchtwagen"
+        },
+        {
+          "value": "string:nissan",
+          "text": "NISSANCOLLECTION"
+        },
+        {
+          "value": "string:opel",
+          "text": "Opel Zertifizierte Gebrauchtwagen"
+        },
+        {
+          "value": "string:peugeot",
+          "text": "Peugeot Qualitäts-Gebrauchtwagen"
+        },
+        {
+          "value": "string:porsche",
+          "text": "Porsche Approved"
+        },
+        {
+          "value": "string:renault",
+          "text": "Renault 7 Sterne"
+        },
+        {
+          "value": "string:seat",
+          "text": "SEAT \"Das Weltauto\""
+        },
+        {
+          "value": "string:skoda",
+          "text": "Skoda Plus"
+        },
+        {
+          "value": "string:spoticar",
+          "text": "SPOTICAR"
+        },
+        {
+          "value": "string:toyota",
+          "text": "Toyota geprüfte Gebrauchtwagen"
+        },
+        {
+          "value": "string:volvo",
+          "text": "VOLVOSELEKT"
+        },
+        {
+          "value": "string:tradeport",
+          "text": "VW TradePort"
+        },
+        {
+          "value": "string:vw",
+          "text": "VW zertifizierte Gebrauchtwagen"
+        }
+      ],
+      "optionCount": 30,
+      "nearbyText": "Qualitätssiegel"
+    },
+    {
+      "index": 358,
+      "type": "text",
+      "name": "",
+      "id": "",
+      "className": "form-control",
+      "placeholder": "",
+      "nearbyText": "Angebotsnummer"
+    },
+    {
+      "index": 359,
+      "type": "select-one",
+      "name": "",
+      "id": "",
+      "className": "form-control form-control--combobox form-control form-control--combobox form-control form-control--combobox form-control form-control--combobox form-control form-control--combobox",
+      "options": [
+        {
+          "value": "number:8",
+          "text": "andere"
+        },
+        {
+          "value": "number:3",
+          "text": "D3"
+        },
+        {
+          "value": "number:2",
+          "text": "D4"
+        },
+        {
+          "value": "number:5",
+          "text": "Euro1"
+        },
+        {
+          "value": "number:6",
+          "text": "Euro2"
+        },
+        {
+          "value": "number:1",
+          "text": "Euro3"
+        },
+        {
+          "value": "number:4",
+          "text": "Euro4"
+        },
+        {
+          "value": "number:9",
+          "text": "Euro5"
+        },
+        {
+          "value": "number:10",
+          "text": "Euro6"
+        },
+        {
+          "value": "number:11",
+          "text": "Euro6c"
+        },
+        {
+          "value": "number:12",
+          "text": "Euro6d"
+        },
+        {
+          "value": "number:13",
+          "text": "Euro6dtemp"
+        },
+        {
+          "value": "number:14",
+          "text": "Euro6e"
+        },
+        {
+          "value": "number:0",
+          "text": "unbekannt"
+        }
+      ],
+      "optionCount": 14,
+      "nearbyText": "Emissionsklasse"
+    },
+    {
+      "index": 360,
+      "type": "select-one",
+      "name": "",
+      "id": "",
+      "className": "form-control form-control--combobox form-control form-control--combobox form-control form-control--combobox form-control form-control--combobox form-control form-control--combobox form-control form-control--combobox",
+      "options": [
+        {
+          "value": "number:3",
+          "text": "Gelb"
+        },
+        {
+          "value": "number:4",
+          "text": "Grün"
+        },
+        {
+          "value": "number:1",
+          "text": "keine Plakette"
+        },
+        {
+          "value": "number:2",
+          "text": "Rot"
+        }
+      ],
+      "optionCount": 4,
+      "nearbyText": "Umweltplakette"
+    },
+    {
+      "index": 361,
+      "type": "checkbox",
+      "name": "",
+      "id": "essential",
+      "className": "inp-cbx ng-untouched ng-pristine",
+      "placeholder": "",
+      "label": "Notwendig"
+    },
+    {
+      "index": 362,
+      "type": "checkbox",
+      "name": "",
+      "id": "marketing",
+      "className": "inp-cbx ng-untouched ng-pristine ng-valid",
+      "placeholder": "",
+      "label": "Marketing"
+    },
+    {
+      "index": 363,
+      "type": "checkbox",
+      "name": "",
+      "id": "external",
+      "className": "inp-cbx ng-untouched ng-pristine ng-valid",
+      "placeholder": "",
+      "label": "Externe Medien"
+    }
+  ],
+  "parameterMap": {
+    "make": {
+      "element": {
+        "index": 362,
+        "type": "checkbox",
+        "name": "",
+        "id": "marketing",
+        "className": "inp-cbx ng-untouched ng-pristine ng-valid",
+        "placeholder": "",
+        "label": "Marketing"
+      },
+      "mapping": "brand selection"
+    },
+    "model": {
+      "element": {
+        "index": 9,
+        "type": "select-one",
+        "name": "",
+        "id": "",
+        "className": "form-control form-control--combobox form-control form-control--combobox form-control form-control--combobox form-control form-control--combobox form-control form-control--combobox form-control form-control--combobox",
+        "options": [],
+        "optionCount": 0,
+        "nearbyText": "Modell"
+      },
+      "mapping": "model selection"
+    },
+    "power": {
+      "element": {
+        "index": 317,
+        "type": "checkbox",
+        "name": "",
+        "id": "92",
+        "className": "ng-scope ng-pristine ng-untouched ng-valid",
+        "placeholder": "",
+        "label": "PKW-Zulassung"
+      },
+      "mapping": "power/horsepower"
+    },
+    "transmission": {
+      "element": {
+        "index": 45,
+        "type": "checkbox",
+        "name": "",
+        "id": "tm-1",
+        "className": "ng-scope ng-pristine ng-untouched ng-valid",
+        "placeholder": "",
+        "label": "Schaltgetriebe"
+      },
+      "mapping": "transmission type"
+    },
+    "fourwheeldrive": {
+      "element": {
+        "index": 118,
+        "type": "checkbox",
+        "name": "",
+        "id": "14",
+        "className": "ng-scope ng-pristine ng-untouched ng-valid",
+        "placeholder": "",
+        "label": "Allrad"
+      },
+      "mapping": "4x4 drive"
+    },
+    "fuel": {
+      "element": {
+        "index": 202,
+        "type": "checkbox",
+        "name": "",
+        "id": "40",
+        "className": "ng-scope ng-pristine ng-untouched ng-valid",
+        "placeholder": "",
+        "label": "Antriebsschlupfregelung"
+      },
+      "mapping": "fuel type"
+    }
+  }
+}

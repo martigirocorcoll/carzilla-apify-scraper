@@ -1,0 +1,38 @@
+{
+    "name": "carzilla-scraper",
+    "version": "1.0.0",
+    "description": "Apify scraper for Carzilla.de car listings - Integration with importocoches.com",
+    "main": "src/main.js",
+    "scripts": {
+        "start": "node src/main.js",
+        "test": "node run_tests.js",
+        "test:browser": "node run_tests.js --browser",
+        "test:mapping": "node test_mapping.js",
+        "test:4x4": "node test_4x4.js"
+    },
+    "keywords": [
+        "apify",
+        "scraper",
+        "carzilla",
+        "cars",
+        "automotive",
+        "importocoches"
+    ],
+    "author": "importocoches.com",
+    "license": "MIT",
+    "dependencies": {
+        "apify": "^3.2.0",
+        "playwright": "^1.40.0"
+    },
+    "devDependencies": {},
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/importocoches/carzilla-apify-scraper"
+    },
+    "apify": {
+        "start": "node src/main.js"
+    }
+}
