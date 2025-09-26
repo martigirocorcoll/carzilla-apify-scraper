@@ -1,5 +1,5 @@
 const { Actor } = require('apify');
-const { CarzillaScraper } = require('./scraper_core.js');
+const CarzillaScraper = require('./scraper_core.js');
 
 Actor.main(async () => {
     console.log('🚀 Starting Carzilla.de Apify Actor...');
