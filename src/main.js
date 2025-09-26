@@ -15,17 +15,20 @@ Actor.main(async () => {
 
     try {
         // Run the scraper
-        const results = await scraper.scrape(input);
+        const response = await scraper.scrape(input);
 
-        console.log(`📊 Scraping completed: ${results?.length || 0} cars found`);
+        console.log(`📊 Scraping completed: ${response?.items?.length || 0} cars found`);
+        console.log(`⏱️ Execution time: ${response?.execution_time_ms}ms`);
+        console.log(`🔗 Search URL: ${response?.search_url}`);
 
         // Save results to Apify dataset
-        if (results && Array.isArray(results)) {
-            for (const car of results) {
+        if (response?.items && Array.isArray(response.items)) {
+            for (const car of response.items) {
                 await Actor.pushData(car);
             }
+            console.log(`✅ Saved ${response.items.length} cars to dataset`);
         } else {
-            console.log('⚠️ No valid results array returned');
+            console.log('⚠️ No valid cars array returned in response.items');
         }
 
         console.log('✅ All data saved to dataset');
