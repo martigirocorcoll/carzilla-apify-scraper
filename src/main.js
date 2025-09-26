@@ -183,7 +183,7 @@ async function extractCarListings(page) {
             }
 
             // Extract power
-            const powerMatch = allText.match/(\\d+)\\s*kW\\s*\\((\\d+)\\s*PS\\)/);
+            const powerMatch = allText.match(/(\\d+)\\s*kW\\s*\\((\\d+)\\s*PS\\)/);
             if (powerMatch) {
                 car.power = powerMatch[1]; // kW value
             }
