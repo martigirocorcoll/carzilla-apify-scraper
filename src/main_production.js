@@ -227,7 +227,6 @@ async function extractCarListings(page, options = {}) {
                 }
 
                 // Extract VAT info
-                const allText = element.textContent;
                 if (allText.includes('MwSt. ausweisbar')) {
                     car.vat = '19';
                 } else if (allText.includes('MwSt. nicht ausweisbar')) {
