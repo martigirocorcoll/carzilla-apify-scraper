@@ -1,4 +1,4 @@
-const Apify = require('apify');
+const { Actor } = require('apify');
 const { chromium } = require('playwright');
 
 // Import our mapping data and utilities
@@ -6,10 +6,10 @@ const { BRAND_MAP, MODEL_MAP } = require('../final_complete_mappings.js');
 const { mapBrandName, mapModelName } = require('../mapping_layer.js');
 const { buildCarzillaURL, getCheckboxFilters, isSearchSupported } = require('./parameter_mapping.js');
 
-Apify.main(async () => {
+Actor.main(async () => {
     console.log('🚗 Starting Carzilla.de scraper for importocoches.com...');
 
-    const input = await Apify.getInput();
+    const input = await Actor.getInput();
     console.log('📥 Input parameters:', JSON.stringify(input, null, 2));
 
     // Default parameters matching importocoches.com structure
@@ -36,7 +36,7 @@ Apify.main(async () => {
 
     if (!supportCheck.supported) {
         console.log('❌ Search not supported, returning empty results');
-        await Apify.pushData({
+        await Actor.pushData({
             items: [],
             total: "0",
             max_pages: 1,
@@ -72,7 +72,7 @@ Apify.main(async () => {
 
     if (!searchUrl) {
         console.log('❌ Could not build search URL, returning empty results');
-        await Apify.pushData({
+        await Actor.pushData({
             items: [],
             total: "0",
             max_pages: 1,
@@ -148,7 +148,7 @@ Apify.main(async () => {
         console.log(`⏱️ Execution time: ${elapsed}ms`);
 
         // Save results in importocoches.com format
-        await Apify.pushData({
+        await Actor.pushData({
             items: results,
             total: results.length.toString(),
             max_pages: 1,
@@ -169,7 +169,7 @@ Apify.main(async () => {
         console.error('❌ Error during scraping:', error);
 
         // Return partial results with error info
-        await Apify.pushData({
+        await Actor.pushData({
             items: results,
             total: results.length.toString(),
             max_pages: 1,
