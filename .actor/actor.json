@@ -11,8 +11,6 @@
     "dockerfile": "./Dockerfile",
     "readme": "./README.md",
     "storages": {
-        "dataset": {
-            "name": "carzilla-results"
-        }
+        "dataset": "carzilla-results"
     }
 }
