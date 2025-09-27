@@ -176,7 +176,13 @@ Actor.main(async () => {
 
         console.log('🔍 Debug info:', debugInfo);
 
-        const cars = await extractCarListings(page, { make: mappedMake });
+        const extractionResult = await extractCarListings(page, { make: mappedMake });
+        const cars = extractionResult.cars;
+        const logs = extractionResult.logs;
+
+        // Show the internal logs from page.evaluate
+        console.log('🔍 Internal extraction logs:');
+        logs.forEach(log => console.log(log));
 
         console.log(`📊 Found ${cars.length} cars`);
         results.push(...cars);
@@ -226,9 +232,10 @@ Actor.main(async () => {
 async function extractCarListings(page, options = {}) {
     return await page.evaluate((opts) => {
         const cars = [];
+        const logs = [];
         const carElements = document.querySelectorAll('.panel.panel-default');
 
-        console.log(`🔍 Processing ${carElements.length} car elements`);
+        logs.push(`🔍 Processing ${carElements.length} car elements`);
 
         carElements.forEach((element, index) => {
             try {
@@ -244,9 +251,9 @@ async function extractCarListings(page, options = {}) {
                     const titleParts = fullTitle.split(/\\s+/);
                     car.make = titleParts[0] || opts.make || '';
                     car.description = fullTitle.replace(car.make, '').trim();
-                    console.log(`🚗 Car ${index}: Found title "${fullTitle}"`);
+                    logs.push(`🚗 Car ${index}: Found title "${fullTitle}"`);
                 } else {
-                    console.log(`❌ Car ${index}: No title element found`);
+                    logs.push(`❌ Car ${index}: No title element found`);
                 }
 
                 // Extract price
@@ -362,29 +369,24 @@ async function extractCarListings(page, options = {}) {
                 car.source = 'apify';
 
                 // Debug final car object
-                console.log(`🔍 Car ${index} final data:`, {
-                    make: car.make,
-                    description: car.description,
-                    price_bruto: car.price_bruto,
-                    hasTitle: !!titleElement,
-                    elementText: element.textContent.slice(0, 200)
-                });
+                logs.push(`🔍 Car ${index} final data: make="${car.make}", desc="${car.description}", price="${car.price_bruto}", hasTitle=${!!titleElement}`);
+                logs.push(`📝 Car ${index} element text: ${element.textContent.slice(0, 200)}...`);
 
                 // Only add car if it has essential data (make and either price or description)
                 if ((car.make || car.description) && (car.price_bruto || car.description)) {
                     cars.push(car);
-                    console.log(`✅ Car ${index} added to results`);
+                    logs.push(`✅ Car ${index} added to results`);
                 } else {
-                    console.log(`❌ Car ${index} skipped - insufficient data`);
+                    logs.push(`❌ Car ${index} skipped - insufficient data`);
                 }
 
             } catch (error) {
-                console.log(`Error processing car ${index}:`, error.message);
+                logs.push(`Error processing car ${index}: ${error.message}`);
             }
         });
 
-        console.log(`🏁 Total cars extracted: ${cars.length}`);
-        return cars;
+        logs.push(`🏁 Total cars extracted: ${cars.length}`);
+        return { cars, logs };
     }, options);
 }
 
