@@ -194,7 +194,7 @@ class CarzillaScraper {
                     car.id = `carzilla-${Date.now()}-${index}`;
 
                     // Extract make and description from title
-                    const titleElement = element.querySelector('.panel-title.cc-title, h3.panel-title');
+                    const titleElement = element.querySelector('h3, heading[level="3"], .panel-title');
                     if (titleElement) {
                         const fullTitle = titleElement.textContent.trim();
                         const titleParts = fullTitle.split(/\s+/);
@@ -204,15 +204,29 @@ class CarzillaScraper {
 
                     // Extract price
                     const allText = element.textContent;
-                    // Look for price patterns like "35.000 €" or "35000 €"
-                    const priceMatch = allText.match(/(\d{1,3}(?:\.\d{3})*)s*€/g);
-                    if (priceMatch) {
-                        // Get the largest price (likely the main price, not monthly rate)
-                        const prices = priceMatch.map(p => parseInt(p.replace(/[^\d]/g, '')));
-                        const mainPrice = Math.max(...prices);
-                        if (mainPrice > 1000) { // Reasonable car price
-                            car.price_bruto = mainPrice.toString();
+                    // Look for the final price (not UPE or savings)
+                    // Pattern matches: "34.440 €" but excludes "UPE:" and "Sie sparen" lines
+                    const priceLines = allText.split('\n').map(line => line.trim());
+                    let finalPrice = null;
+
+                    for (const line of priceLines) {
+                        // Skip UPE and savings lines
+                        if (line.includes('UPE:') || line.includes('Sie sparen') || line.includes('Monat')) {
+                            continue;
                         }
+                        // Look for standalone price like "34.440 €"
+                        const priceMatch = line.match(/^(\d{1,3}(?:\.\d{3})*)\s*€$/);
+                        if (priceMatch) {
+                            const price = parseInt(priceMatch[1].replace(/\./g, ''));
+                            if (price > 5000) { // Reasonable car price minimum
+                                finalPrice = price;
+                                break;
+                            }
+                        }
+                    }
+
+                    if (finalPrice) {
+                        car.price_bruto = finalPrice.toString();
                     }
 
                     // Extract VAT info
@@ -225,9 +239,9 @@ class CarzillaScraper {
                     }
 
                     // Extract mileage
-                    const mileageMatch = allText.match(/(\d{1,3}(?:\.\d{3})*)\s*km/i);
+                    const mileageMatch = allText.match(/(\d{1,3}(?:[\.\s]?\d{3})*)\s*km/i);
                     if (mileageMatch) {
-                        car.mileage = mileageMatch[1].replace(/\./g, '');
+                        car.mileage = mileageMatch[1].replace(/[\.\s]/g, '');
                     }
 
                     // Extract registration date
@@ -286,9 +300,9 @@ class CarzillaScraper {
                         car.color = colorMatch[1];
                     }
 
-                    // Extract image
-                    const imageElement = element.querySelector('img');
-                    if (imageElement && imageElement.src && !imageElement.src.includes('carzilla-de-02.png')) {
+                    // Extract image - look for the main car image, not icons or logos
+                    const imageElement = element.querySelector('img[alt*="Bild:"], img[src*="cargate360"], img:not([alt*="Qualitätssiegel"]):not([src*="logo"]):not([src*="icon"])');
+                    if (imageElement && imageElement.src && !imageElement.src.includes('carzilla-de-02.png') && !imageElement.src.includes('qualitaetssiegel')) {
                         car.photo_url = imageElement.src;
                     }
 
