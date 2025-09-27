@@ -228,6 +228,8 @@ async function extractCarListings(page, options = {}) {
         const cars = [];
         const carElements = document.querySelectorAll('.panel.panel-default');
 
+        console.log(`🔍 Processing ${carElements.length} car elements`);
+
         carElements.forEach((element, index) => {
             try {
                 const car = {};
@@ -242,6 +244,9 @@ async function extractCarListings(page, options = {}) {
                     const titleParts = fullTitle.split(/\\s+/);
                     car.make = titleParts[0] || opts.make || '';
                     car.description = fullTitle.replace(car.make, '').trim();
+                    console.log(`🚗 Car ${index}: Found title "${fullTitle}"`);
+                } else {
+                    console.log(`❌ Car ${index}: No title element found`);
                 }
 
                 // Extract price
@@ -356,9 +361,21 @@ async function extractCarListings(page, options = {}) {
                 // Set source
                 car.source = 'apify';
 
+                // Debug final car object
+                console.log(`🔍 Car ${index} final data:`, {
+                    make: car.make,
+                    description: car.description,
+                    price_bruto: car.price_bruto,
+                    hasTitle: !!titleElement,
+                    elementText: element.textContent.slice(0, 200)
+                });
+
                 // Only add car if it has essential data (make and either price or description)
                 if ((car.make || car.description) && (car.price_bruto || car.description)) {
                     cars.push(car);
+                    console.log(`✅ Car ${index} added to results`);
+                } else {
+                    console.log(`❌ Car ${index} skipped - insufficient data`);
                 }
 
             } catch (error) {
@@ -366,6 +383,7 @@ async function extractCarListings(page, options = {}) {
             }
         });
 
+        console.log(`🏁 Total cars extracted: ${cars.length}`);
         return cars;
     }, options);
 }
