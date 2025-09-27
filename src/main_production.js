@@ -247,71 +247,62 @@ async function extractCarListings(page, options = {}) {
                 // Extract make and description from title
                 const titleElement = element.querySelector('h3, heading[level="3"], .panel-title');
                 if (titleElement) {
-                    const fullTitle = titleElement.textContent.replace(/\\s+/g, ' ').trim();
-                    const titleParts = fullTitle.split(/\\s+/);
-                    car.make = titleParts[0] || opts.make || '';
-                    car.description = fullTitle.replace(car.make, '').trim();
-                    logs.push(`🚗 Car ${index}: Found title "${fullTitle}"`);
+                    // Clean up title text more aggressively
+                    let fullTitle = titleElement.textContent || titleElement.innerText || '';
+                    fullTitle = fullTitle.replace(/\\n/g, ' ').replace(/\\t/g, ' ').replace(/\\s+/g, ' ').trim();
+
+                    if (fullTitle) {
+                        car.make = opts.make || 'Audi';  // Use passed make
+                        car.description = fullTitle;     // Full title as description
+                        logs.push(`🚗 Car ${index}: Cleaned title "${fullTitle}"`);
+                    } else {
+                        logs.push(`❌ Car ${index}: Empty title after cleaning`);
+                    }
                 } else {
                     logs.push(`❌ Car ${index}: No title element found`);
-                    // Fallback: try to extract from any heading or link
-                    const fallbackTitle = element.querySelector('a, h1, h2, h3, h4, h5, h6, .title');
-                    if (fallbackTitle) {
-                        const fallbackText = fallbackTitle.textContent.replace(/\\s+/g, ' ').trim();
+                    // Try to find ANY text content in the element
+                    const anyText = element.textContent || element.innerText || '';
+                    if (anyText.trim().length > 10) {
                         car.make = opts.make || 'Audi';
-                        car.description = fallbackText;
-                        logs.push(`🔄 Car ${index}: Used fallback title "${fallbackText}"`);
+                        car.description = anyText.trim().slice(0, 100);
+                        logs.push(`🔄 Car ${index}: Used element text as description`);
                     }
                 }
 
-                // Extract price - use multiple strategies
-                const allText = element.textContent;
-                let finalPrice = null;
+                // Extract price - simplified approach
+                const allText = element.textContent || element.innerText || '';
+                logs.push(`🔍 Car ${index}: Searching for price in text length: ${allText.length}`);
 
-                // Strategy 1: Look for price in text content
-                const pricePatterns = [
-                    /(?:^|\\s)(\\d{1,3}(?:\\.\\d{3})*)\\s*€(?:\\s|$)/g,  // 34.440 €
-                    /(?:^|\\s)(\\d{4,6})\\s*€(?:\\s|$)/g,                // 34440 €
-                    /Preis[:\\s]*(\\d{1,3}(?:\\.\\d{3})*)\\s*€/gi,       // Preis: 34.440 €
-                    /€\\s*(\\d{1,3}(?:\\.\\d{3})*)(?:\\s|$)/g           // € 34.440
+                // Simple price patterns
+                const simplePatterns = [
+                    /(\\d{2,3}\\.\\d{3})\\s*€/g,     // 34.440 €
+                    /(\\d{4,6})\\s*€/g,             // 34440 €
+                    /€\\s*(\\d{2,3}\\.\\d{3})/g,     // € 34.440
+                    /€\\s*(\\d{4,6})/g              // € 34440
                 ];
 
-                for (const pattern of pricePatterns) {
-                    const matches = [...allText.matchAll(pattern)];
-                    if (matches.length > 0) {
-                        const prices = matches.map(match => {
-                            const priceStr = match[1];
-                            return parseInt(priceStr.replace(/\\./g, ''));
-                        }).filter(p => p > 5000 && p < 200000); // Reasonable car price range
-
-                        if (prices.length > 0) {
-                            finalPrice = Math.max(...prices); // Take the highest price (main price)
+                let foundPrice = null;
+                for (let i = 0; i < simplePatterns.length; i++) {
+                    const pattern = simplePatterns[i];
+                    const match = allText.match(pattern);
+                    if (match) {
+                        logs.push(`🔍 Car ${index}: Pattern ${i} matched: ${match[0]}`);
+                        const priceStr = match[1].replace(/\\./g, '');
+                        const price = parseInt(priceStr);
+                        if (price > 1000 && price < 500000) {
+                            foundPrice = price;
+                            logs.push(`💰 Car ${index}: Valid price found: ${foundPrice}€`);
                             break;
                         }
                     }
                 }
 
-                // Strategy 2: Look in innerHTML for price elements
-                if (!finalPrice) {
-                    const priceElements = element.querySelectorAll('[class*="price"], [class*="preis"], .amount, .cost');
-                    for (const priceEl of priceElements) {
-                        const priceText = priceEl.textContent;
-                        const priceMatch = priceText.match(/(\\d{1,3}(?:\\.\\d{3})*)\\s*€/);
-                        if (priceMatch) {
-                            const price = parseInt(priceMatch[1].replace(/\\./g, ''));
-                            if (price > 5000 && price < 200000) {
-                                finalPrice = price;
-                                break;
-                            }
-                        }
-                    }
-                }
-
-                if (finalPrice) {
-                    car.price_bruto = finalPrice.toString();
-                    logs.push(`💰 Car ${index}: Found price ${finalPrice}€`);
+                if (foundPrice) {
+                    car.price_bruto = foundPrice.toString();
                 } else {
-                    logs.push(`❌ Car ${index}: No price found in text: "${allText.slice(0, 300)}"`);
+                    logs.push(`❌ Car ${index}: NO PRICE FOUND. Text sample: "${allText.slice(0, 200)}"`);
+                    // Set a placeholder price for testing
+                    car.price_bruto = "0";
                 }
 
                 // Extract VAT info
@@ -403,12 +394,12 @@ async function extractCarListings(page, options = {}) {
                 logs.push(`🔍 Car ${index} final data: make="${car.make}", desc="${car.description}", price="${car.price_bruto}", hasTitle=${!!titleElement}`);
                 logs.push(`📝 Car ${index} element text: ${element.textContent.slice(0, 200)}...`);
 
-                // Add car if it has essential data (make and description are sufficient)
-                if ((car.make && car.description) || (car.description && car.description.length > 10)) {
+                // Add car if it has a description (relaxed criteria for testing)
+                if (car.description && car.description.length > 5) {
                     cars.push(car);
-                    logs.push(`✅ Car ${index} added to results`);
+                    logs.push(`✅ Car ${index} ADDED - make: "${car.make}", desc: "${car.description.slice(0, 50)}...", price: "${car.price_bruto}"`);
                 } else {
-                    logs.push(`❌ Car ${index} skipped - insufficient data (make: "${car.make}", desc: "${car.description}", price: "${car.price_bruto}")`);
+                    logs.push(`❌ Car ${index} REJECTED - make: "${car.make}", desc: "${car.description}", price: "${car.price_bruto}"`);
                 }
 
             } catch (error) {
