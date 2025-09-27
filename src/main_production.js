@@ -247,40 +247,71 @@ async function extractCarListings(page, options = {}) {
                 // Extract make and description from title
                 const titleElement = element.querySelector('h3, heading[level="3"], .panel-title');
                 if (titleElement) {
-                    const fullTitle = titleElement.textContent.trim();
+                    const fullTitle = titleElement.textContent.replace(/\\s+/g, ' ').trim();
                     const titleParts = fullTitle.split(/\\s+/);
                     car.make = titleParts[0] || opts.make || '';
                     car.description = fullTitle.replace(car.make, '').trim();
                     logs.push(`🚗 Car ${index}: Found title "${fullTitle}"`);
                 } else {
                     logs.push(`❌ Car ${index}: No title element found`);
+                    // Fallback: try to extract from any heading or link
+                    const fallbackTitle = element.querySelector('a, h1, h2, h3, h4, h5, h6, .title');
+                    if (fallbackTitle) {
+                        const fallbackText = fallbackTitle.textContent.replace(/\\s+/g, ' ').trim();
+                        car.make = opts.make || 'Audi';
+                        car.description = fallbackText;
+                        logs.push(`🔄 Car ${index}: Used fallback title "${fallbackText}"`);
+                    }
                 }
 
-                // Extract price
+                // Extract price - use multiple strategies
                 const allText = element.textContent;
-                // Look for the final price (not UPE or savings)
-                // Pattern matches: "34.440 €" but excludes "UPE:" and "Sie sparen" lines
-                const priceLines = allText.split('\\n').map(line => line.trim());
                 let finalPrice = null;
 
-                for (const line of priceLines) {
-                    // Skip UPE and savings lines
-                    if (line.includes('UPE:') || line.includes('Sie sparen') || line.includes('Monat')) {
-                        continue;
-                    }
-                    // Look for standalone price like "34.440 €"
-                    const priceMatch = line.match(/^(\\d{1,3}(?:\\.\\d{3})*)\\s*€$/);
-                    if (priceMatch) {
-                        const price = parseInt(priceMatch[1].replace(/\\./g, ''));
-                        if (price > 5000) { // Reasonable car price minimum
-                            finalPrice = price;
+                // Strategy 1: Look for price in text content
+                const pricePatterns = [
+                    /(?:^|\\s)(\\d{1,3}(?:\\.\\d{3})*)\\s*€(?:\\s|$)/g,  // 34.440 €
+                    /(?:^|\\s)(\\d{4,6})\\s*€(?:\\s|$)/g,                // 34440 €
+                    /Preis[:\\s]*(\\d{1,3}(?:\\.\\d{3})*)\\s*€/gi,       // Preis: 34.440 €
+                    /€\\s*(\\d{1,3}(?:\\.\\d{3})*)(?:\\s|$)/g           // € 34.440
+                ];
+
+                for (const pattern of pricePatterns) {
+                    const matches = [...allText.matchAll(pattern)];
+                    if (matches.length > 0) {
+                        const prices = matches.map(match => {
+                            const priceStr = match[1];
+                            return parseInt(priceStr.replace(/\\./g, ''));
+                        }).filter(p => p > 5000 && p < 200000); // Reasonable car price range
+
+                        if (prices.length > 0) {
+                            finalPrice = Math.max(...prices); // Take the highest price (main price)
                             break;
+                        }
+                    }
+                }
+
+                // Strategy 2: Look in innerHTML for price elements
+                if (!finalPrice) {
+                    const priceElements = element.querySelectorAll('[class*="price"], [class*="preis"], .amount, .cost');
+                    for (const priceEl of priceElements) {
+                        const priceText = priceEl.textContent;
+                        const priceMatch = priceText.match(/(\\d{1,3}(?:\\.\\d{3})*)\\s*€/);
+                        if (priceMatch) {
+                            const price = parseInt(priceMatch[1].replace(/\\./g, ''));
+                            if (price > 5000 && price < 200000) {
+                                finalPrice = price;
+                                break;
+                            }
                         }
                     }
                 }
 
                 if (finalPrice) {
                     car.price_bruto = finalPrice.toString();
+                    logs.push(`💰 Car ${index}: Found price ${finalPrice}€`);
+                } else {
+                    logs.push(`❌ Car ${index}: No price found in text: "${allText.slice(0, 300)}"`);
                 }
 
                 // Extract VAT info
@@ -372,12 +403,12 @@ async function extractCarListings(page, options = {}) {
                 logs.push(`🔍 Car ${index} final data: make="${car.make}", desc="${car.description}", price="${car.price_bruto}", hasTitle=${!!titleElement}`);
                 logs.push(`📝 Car ${index} element text: ${element.textContent.slice(0, 200)}...`);
 
-                // Only add car if it has essential data (make and either price or description)
-                if ((car.make || car.description) && (car.price_bruto || car.description)) {
+                // Add car if it has essential data (make and description are sufficient)
+                if ((car.make && car.description) || (car.description && car.description.length > 10)) {
                     cars.push(car);
                     logs.push(`✅ Car ${index} added to results`);
                 } else {
-                    logs.push(`❌ Car ${index} skipped - insufficient data`);
+                    logs.push(`❌ Car ${index} skipped - insufficient data (make: "${car.make}", desc: "${car.description}", price: "${car.price_bruto}")`);
                 }
 
             } catch (error) {
