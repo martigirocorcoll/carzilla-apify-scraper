@@ -119,8 +119,17 @@ Actor.main(async () => {
             }
         }
 
-        // Wait for content to load
-        await page.waitForTimeout(3000);
+        // Wait for content to load and try to wait for specific elements
+        console.log('⏳ Waiting for page content to load...');
+        await page.waitForTimeout(5000);
+
+        // Try to wait for car listings to appear
+        try {
+            await page.waitForSelector('.panel, .vehicle, [class*="car"]', { timeout: 10000 });
+            console.log('✅ Found some panel or vehicle elements');
+        } catch (waitError) {
+            console.log('⚠️ No car elements found with waitForSelector:', waitError.message);
+        }
 
         // Log page info for debugging
         const pageInfo = await page.evaluate(() => {
@@ -149,6 +158,24 @@ Actor.main(async () => {
 
         // Extract car listings
         console.log('🚙 Extracting car listings...');
+
+        // Add debugging for element selection
+        const debugInfo = await page.evaluate(() => {
+            const panels = document.querySelectorAll('.panel.panel-default');
+            const allDivs = document.querySelectorAll('div');
+            const panelsAny = document.querySelectorAll('.panel');
+
+            return {
+                panelDefaultCount: panels.length,
+                allDivsCount: allDivs.length,
+                panelAnyCount: panelsAny.length,
+                bodyHTML: document.body ? document.body.innerHTML.slice(0, 1000) : 'No body',
+                hasContent: document.body ? document.body.textContent.length > 100 : false
+            };
+        });
+
+        console.log('🔍 Debug info:', debugInfo);
+
         const cars = await extractCarListings(page, { make: mappedMake });
 
         console.log(`📊 Found ${cars.length} cars`);
@@ -209,7 +236,7 @@ async function extractCarListings(page, options = {}) {
                 car.id = `carzilla-${Date.now()}-${index}`;
 
                 // Extract make and description from title
-                const titleElement = element.querySelector('.panel-title.cc-title, h3.panel-title');
+                const titleElement = element.querySelector('h3, heading[level="3"], .panel-title');
                 if (titleElement) {
                     const fullTitle = titleElement.textContent.trim();
                     const titleParts = fullTitle.split(/\\s+/);
@@ -217,24 +244,31 @@ async function extractCarListings(page, options = {}) {
                     car.description = fullTitle.replace(car.make, '').trim();
                 }
 
-                // Extract price - German format handling
+                // Extract price
                 const allText = element.textContent;
+                // Look for the final price (not UPE or savings)
+                // Pattern matches: "34.440 €" but excludes "UPE:" and "Sie sparen" lines
+                const priceLines = allText.split('\\n').map(line => line.trim());
+                let finalPrice = null;
 
-                // Look for price patterns like "35.000 €", "35000 €", "45.990 €"
-                const priceMatches = allText.match(/([\\d]{1,3}(?:\\.[\\d]{3})*)\\s*€/g);
-                if (priceMatches) {
-                    const prices = priceMatches.map(priceStr => {
-                        // Remove € symbol and spaces
-                        const numStr = priceStr.replace(/[€\\s]/g, '');
-                        // Handle German thousand separator: 35.000 → 35000
-                        return parseInt(numStr.replace(/\\./g, ''));
-                    }).filter(price => !isNaN(price) && price > 1000); // Only valid car prices
-
-                    if (prices.length > 0) {
-                        // Get the largest price (main price, not monthly payments)
-                        const mainPrice = Math.max(...prices);
-                        car.price_bruto = mainPrice.toString();
+                for (const line of priceLines) {
+                    // Skip UPE and savings lines
+                    if (line.includes('UPE:') || line.includes('Sie sparen') || line.includes('Monat')) {
+                        continue;
                     }
+                    // Look for standalone price like "34.440 €"
+                    const priceMatch = line.match(/^(\\d{1,3}(?:\\.\\d{3})*)\\s*€$/);
+                    if (priceMatch) {
+                        const price = parseInt(priceMatch[1].replace(/\\./g, ''));
+                        if (price > 5000) { // Reasonable car price minimum
+                            finalPrice = price;
+                            break;
+                        }
+                    }
+                }
+
+                if (finalPrice) {
+                    car.price_bruto = finalPrice.toString();
                 }
 
                 // Extract VAT info
@@ -247,9 +281,9 @@ async function extractCarListings(page, options = {}) {
                 }
 
                 // Extract mileage
-                const mileageMatch = allText.match(/([\\d]{1,3}(?:\\.[\\d]{3})*)\\s*km/i);
+                const mileageMatch = allText.match(/(\\d{1,3}(?:[\\.\s]?\\d{3})*)\\s*km/i);
                 if (mileageMatch) {
-                    car.mileage = mileageMatch[1].replace(/\\./g, '');
+                    car.mileage = mileageMatch[1].replace(/[\\.\s]/g, '');
                 }
 
                 // Extract registration date
@@ -308,9 +342,9 @@ async function extractCarListings(page, options = {}) {
                     car.color = colorMatch[1];
                 }
 
-                // Extract image
-                const imageElement = element.querySelector('img');
-                if (imageElement && imageElement.src && !imageElement.src.includes('carzilla-de-02.png')) {
+                // Extract image - look for the main car image, not icons or logos
+                const imageElement = element.querySelector('img[alt*="Bild:"], img[src*="cargate360"], img:not([alt*="Qualitätssiegel"]):not([src*="logo"]):not([src*="icon"])');
+                if (imageElement && imageElement.src && !imageElement.src.includes('carzilla-de-02.png') && !imageElement.src.includes('qualitaetssiegel')) {
                     car.photo_url = imageElement.src;
                 }
 
