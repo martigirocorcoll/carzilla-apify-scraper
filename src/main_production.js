@@ -269,111 +269,253 @@ async function extractCarListings(page, options = {}) {
                     }
                 }
 
-                // Extract price - simplified approach
-                const allText = element.textContent || element.innerText || '';
-                logs.push(`🔍 Car ${index}: Searching for price in text length: ${allText.length}`);
+                // EXPERT DATA EXTRACTION STRATEGY
+                logs.push(`🔬 Car ${index}: Starting expert extraction analysis`);
 
-                // Simple price patterns
-                const simplePatterns = [
-                    /(\\d{2,3}\\.\\d{3})\\s*€/g,     // 34.440 €
-                    /(\\d{4,6})\\s*€/g,             // 34440 €
-                    /€\\s*(\\d{2,3}\\.\\d{3})/g,     // € 34.440
-                    /€\\s*(\\d{4,6})/g              // € 34440
+                // Strategy 1: innerHTML analysis (raw HTML content)
+                const innerHTML = element.innerHTML || '';
+                logs.push(`📋 Car ${index}: innerHTML length: ${innerHTML.length}`);
+
+                // Strategy 2: Visible text extraction (ignore hidden elements)
+                const visibleText = Array.from(element.querySelectorAll('*'))
+                    .filter(el => {
+                        const style = window.getComputedStyle(el);
+                        return style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0';
+                    })
+                    .map(el => el.textContent?.trim())
+                    .filter(text => text && text.length > 0)
+                    .join(' ');
+
+                logs.push(`👁️ Car ${index}: Visible text length: ${visibleText.length}, sample: "${visibleText.slice(0, 100)}"`);
+
+                // Strategy 3: Price extraction from multiple sources
+                let foundPrice = null;
+                const priceSelectors = [
+                    '[class*="price"]', '[class*="preis"]', '[class*="cost"]', '[class*="amount"]',
+                    '[data-price]', '[data-cost]', '.price', '.preis', '.betrag', '.kosten'
                 ];
 
-                let foundPrice = null;
-                for (let i = 0; i < simplePatterns.length; i++) {
-                    const pattern = simplePatterns[i];
-                    const match = allText.match(pattern);
+                // Try specific price elements first
+                for (const selector of priceSelectors) {
+                    const priceElements = element.querySelectorAll(selector);
+                    for (const priceEl of priceElements) {
+                        const priceText = priceEl.textContent || priceEl.getAttribute('data-price') || '';
+                        const priceMatch = priceText.match(/(\\d{1,3}(?:[.,]\\d{3})*(?:[.,]\\d{2})?)\\s*€?/);
+                        if (priceMatch) {
+                            const cleanPrice = priceMatch[1].replace(/[.,]/g, '');
+                            const price = parseInt(cleanPrice);
+                            if (price > 1000 && price < 500000) {
+                                foundPrice = price;
+                                logs.push(`💰 Car ${index}: Price found via selector "${selector}": ${foundPrice}€`);
+                                break;
+                            }
+                        }
+                    }
+                    if (foundPrice) break;
+                }
+
+                // Strategy 4: Pattern matching in innerHTML if no specific elements found
+                if (!foundPrice) {
+                    const htmlPricePatterns = [
+                        />\\s*(\\d{1,3}[.,]\\d{3})\\s*€/g,         // >34.440 €
+                        /€\\s*(\\d{1,3}[.,]\\d{3})\\s*</g,         // € 34.440 <
+                        /Preis[^>]*>(\\d{1,3}[.,]\\d{3})/gi,       // Preis>34440
+                        /price[^>]*>(\\d{1,3}[.,]\\d{3})/gi        // price>34440
+                    ];
+
+                    for (let i = 0; i < htmlPricePatterns.length; i++) {
+                        const pattern = htmlPricePatterns[i];
+                        const match = innerHTML.match(pattern);
+                        if (match) {
+                            const cleanPrice = match[1].replace(/[.,]/g, '');
+                            const price = parseInt(cleanPrice);
+                            if (price > 1000 && price < 500000) {
+                                foundPrice = price;
+                                logs.push(`💰 Car ${index}: HTML pattern ${i} found price: ${foundPrice}€`);
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                // Strategy 5: JSON/structured data extraction
+                if (!foundPrice) {
+                    const scriptTags = element.querySelectorAll('script[type="application/json"], script[type="application/ld+json"]');
+                    for (const script of scriptTags) {
+                        try {
+                            const jsonData = JSON.parse(script.textContent);
+                            if (jsonData.price || jsonData.offers?.price) {
+                                const price = parseInt(jsonData.price || jsonData.offers.price);
+                                if (price > 1000) {
+                                    foundPrice = price;
+                                    logs.push(`💰 Car ${index}: JSON data found price: ${foundPrice}€`);
+                                    break;
+                                }
+                            }
+                        } catch (e) {
+                            // Ignore JSON parse errors
+                        }
+                    }
+                }
+
+                car.price_bruto = foundPrice ? foundPrice.toString() : "0";
+                if (!foundPrice) {
+                    logs.push(`❌ Car ${index}: NO PRICE after all strategies. Visible text: "${visibleText.slice(0, 200)}"`);
+                }
+
+                // EXPERT MILEAGE EXTRACTION
+                let foundMileage = null;
+                const mileagePatterns = [
+                    /(\\d{1,3}[.,]?\\d{3})\\s*km/gi,           // 45.000 km, 45,000 km
+                    /(\\d{4,6})\\s*km/gi,                      // 45000 km
+                    /Kilometerstand[^>]*>(\\d{1,3}[.,]?\\d{3})/gi, // Kilometerstand>45000
+                    /km[^>]*>(\\d{1,3}[.,]?\\d{3})/gi          // km>45000
+                ];
+
+                // Try visible text first
+                for (const pattern of mileagePatterns) {
+                    const match = visibleText.match(pattern);
                     if (match) {
-                        logs.push(`🔍 Car ${index}: Pattern ${i} matched: ${match[0]}`);
-                        const priceStr = match[1].replace(/\\./g, '');
-                        const price = parseInt(priceStr);
-                        if (price > 1000 && price < 500000) {
-                            foundPrice = price;
-                            logs.push(`💰 Car ${index}: Valid price found: ${foundPrice}€`);
+                        const mileage = parseInt(match[1].replace(/[.,]/g, ''));
+                        if (mileage > 0 && mileage < 1000000) {
+                            foundMileage = mileage;
+                            logs.push(`🛣️ Car ${index}: Mileage found in visible text: ${foundMileage}km`);
                             break;
                         }
                     }
                 }
 
-                if (foundPrice) {
-                    car.price_bruto = foundPrice.toString();
-                } else {
-                    logs.push(`❌ Car ${index}: NO PRICE FOUND. Text sample: "${allText.slice(0, 200)}"`);
-                    // Set a placeholder price for testing
-                    car.price_bruto = "0";
+                // Try innerHTML if not found
+                if (!foundMileage) {
+                    for (const pattern of mileagePatterns) {
+                        const match = innerHTML.match(pattern);
+                        if (match) {
+                            const mileage = parseInt(match[1].replace(/[.,]/g, ''));
+                            if (mileage > 0 && mileage < 1000000) {
+                                foundMileage = mileage;
+                                logs.push(`🛣️ Car ${index}: Mileage found in HTML: ${foundMileage}km`);
+                                break;
+                            }
+                        }
+                    }
                 }
 
-                // Extract VAT info
-                if (allText.includes('MwSt. ausweisbar')) {
+                if (foundMileage) {
+                    car.mileage = foundMileage.toString();
+                }
+
+                // EXPERT YEAR/REGISTRATION EXTRACTION
+                let foundYear = null;
+                const yearPatterns = [
+                    /EZ[^>]*?(\\d{2})\\/(\\d{4})/gi,           // EZ 12/2023
+                    /EZ[^>]*?(\\d{4})/gi,                      // EZ 2023
+                    /Erstzulassung[^>]*?(\\d{4})/gi,          // Erstzulassung 2023
+                    /(\\d{2})\\/(\\d{4})/g,                   // 12/2023
+                    /Jahr[^>]*?(\\d{4})/gi                    // Jahr 2023
+                ];
+
+                for (const pattern of yearPatterns) {
+                    const match = (visibleText + innerHTML).match(pattern);
+                    if (match) {
+                        const year = match[2] || match[1]; // Take full year
+                        if (year && year.length === 4 && parseInt(year) > 1990 && parseInt(year) <= 2025) {
+                            foundYear = year;
+                            car.first_registration = year + '-01'; // Default to January
+                            logs.push(`📅 Car ${index}: Year found: ${foundYear}`);
+                            break;
+                        }
+                    }
+                }
+
+                // EXPERT POWER EXTRACTION
+                let foundPower = null;
+                const powerPatterns = [
+                    /(\\d{2,3})\\s*kW/gi,                     // 150 kW
+                    /(\\d{2,3})\\s*PS/gi,                     // 204 PS (convert to kW)
+                    /Leistung[^>]*?(\\d{2,3})\\s*kW/gi        // Leistung 150 kW
+                ];
+
+                for (const pattern of powerPatterns) {
+                    const match = (visibleText + innerHTML).match(pattern);
+                    if (match) {
+                        let power = parseInt(match[1]);
+                        // Convert PS to kW if needed (pattern contains PS)
+                        if (pattern.toString().includes('PS')) {
+                            power = Math.round(power * 0.735); // PS to kW conversion
+                        }
+                        if (power > 30 && power < 1000) {
+                            foundPower = power;
+                            logs.push(`⚡ Car ${index}: Power found: ${foundPower}kW`);
+                            break;
+                        }
+                    }
+                }
+
+                if (foundPower) {
+                    car.power = foundPower.toString();
+                }
+
+                // VAT extraction with multiple strategies
+                car.vat = '19'; // Default
+                if (visibleText.includes('MwSt. ausweisbar') || innerHTML.includes('MwSt. ausweisbar')) {
                     car.vat = '19';
-                } else if (allText.includes('MwSt. nicht ausweisbar')) {
+                } else if (visibleText.includes('MwSt. nicht ausweisbar') || innerHTML.includes('MwSt. nicht ausweisbar')) {
                     car.vat = '0';
-                } else {
-                    car.vat = '19'; // Default
                 }
 
-                // Extract mileage
-                const mileageMatch = allText.match(/(\\d{1,3}(?:[\\.\s]?\\d{3})*)\\s*km/i);
-                if (mileageMatch) {
-                    car.mileage = mileageMatch[1].replace(/[\\.\s]/g, '');
-                }
-
-                // Extract registration date
-                const dateMatch = allText.match(/EZ\\s+(\\w+)\\s+(\\d{4})/i);
-                if (dateMatch) {
-                    const monthName = dateMatch[1];
-                    const year = dateMatch[2];
-
-                    // Convert German month names to numbers
-                    const monthMap = {
-                        'januar': '01', 'februar': '02', 'märz': '03', 'april': '04',
-                        'mai': '05', 'juni': '06', 'juli': '07', 'august': '08',
-                        'september': '09', 'oktober': '10', 'november': '11', 'dezember': '12'
-                    };
-
-                    const monthNum = monthMap[monthName.toLowerCase()] || '01';
-                    car.first_registration = `${year}-${monthNum}`;
-                }
-
-                // Extract power
-                const powerMatch = allText.match(/(\\d+)\\s*kW\\s*\\((\\d+)\\s*PS\\)/i);
-                if (powerMatch) {
-                    car.power = powerMatch[1]; // kW value
-                }
-
-                // Extract fuel type and map to UnifiedCar format
+                // EXPERT FUEL TYPE EXTRACTION
+                const searchText = (visibleText + innerHTML).toLowerCase();
                 const fuelMap = {
-                    'benzin': 'PETROL',
-                    'diesel': 'DIESEL',
-                    'elektro': 'ELECTRICITY',
-                    'hybrid': 'HYBRID',
-                    'gas': 'LPG',
-                    'erdgas': 'CNG',
-                    'wasserstoff': 'HYDROGENIUM'
+                    'benzin': 'PETROL', 'petrol': 'PETROL', 'gasoline': 'PETROL',
+                    'diesel': 'DIESEL', 'tdi': 'DIESEL', 'cdi': 'DIESEL',
+                    'elektro': 'ELECTRICITY', 'electric': 'ELECTRICITY', 'ev': 'ELECTRICITY',
+                    'hybrid': 'HYBRID', 'plug-in': 'HYBRID', 'tfsi e': 'HYBRID',
+                    'gas': 'LPG', 'lpg': 'LPG', 'autogas': 'LPG',
+                    'erdgas': 'CNG', 'cng': 'CNG',
+                    'wasserstoff': 'HYDROGENIUM', 'hydrogen': 'HYDROGENIUM'
                 };
 
-                for (const [german, unified] of Object.entries(fuelMap)) {
-                    if (allText.toLowerCase().includes(german)) {
-                        car.fuel = unified;
+                for (const [keyword, fuelType] of Object.entries(fuelMap)) {
+                    if (searchText.includes(keyword)) {
+                        car.fuel = fuelType;
+                        logs.push(`⛽ Car ${index}: Fuel type found: ${fuelType} (from "${keyword}")`);
                         break;
                     }
                 }
 
-                // Extract transmission
-                if (allText.toLowerCase().includes('automatik')) {
-                    car.gearbox = 'AUTOMATIC_GEAR';
-                } else if (allText.toLowerCase().includes('schaltgetriebe') || allText.toLowerCase().includes('manuell')) {
-                    car.gearbox = 'MANUAL_GEAR';
-                } else if (allText.toLowerCase().includes('tiptronic')) {
-                    car.gearbox = 'SEMIAUTOMATIC_GEAR';
+                // EXPERT TRANSMISSION EXTRACTION
+                const transmissionKeywords = {
+                    'automatik': 'AUTOMATIC_GEAR',
+                    'automatic': 'AUTOMATIC_GEAR',
+                    's tronic': 'AUTOMATIC_GEAR',
+                    'tiptronic': 'SEMIAUTOMATIC_GEAR',
+                    'dsg': 'AUTOMATIC_GEAR',
+                    'schaltgetriebe': 'MANUAL_GEAR',
+                    'manuell': 'MANUAL_GEAR',
+                    'manual': 'MANUAL_GEAR'
+                };
+
+                for (const [keyword, gearType] of Object.entries(transmissionKeywords)) {
+                    if (searchText.includes(keyword)) {
+                        car.gearbox = gearType;
+                        logs.push(`⚙️ Car ${index}: Transmission found: ${gearType} (from "${keyword}")`);
+                        break;
+                    }
                 }
 
-                // Extract color (look for color after transmission info)
-                const colorMatch = allText.match(/(?:automatik|schaltgetriebe|manuell)\\s+(\\w+)/i);
-                if (colorMatch && !['sitzer', 'türer'].includes(colorMatch[1].toLowerCase())) {
-                    car.color = colorMatch[1];
+                // EXPERT COLOR EXTRACTION
+                const colorKeywords = [
+                    'schwarz', 'black', 'weiss', 'white', 'rot', 'red', 'blau', 'blue',
+                    'grau', 'gray', 'grey', 'silber', 'silver', 'grün', 'green',
+                    'gelb', 'yellow', 'orange', 'braun', 'brown', 'beige'
+                ];
+
+                for (const color of colorKeywords) {
+                    if (searchText.includes(color)) {
+                        car.color = color.charAt(0).toUpperCase() + color.slice(1);
+                        logs.push(`🎨 Car ${index}: Color found: ${car.color}`);
+                        break;
+                    }
                 }
 
                 // Extract image - look for the main car image, not icons or logos
@@ -390,16 +532,25 @@ async function extractCarListings(page, options = {}) {
                 // Set source
                 car.source = 'apify';
 
-                // Debug final car object
-                logs.push(`🔍 Car ${index} final data: make="${car.make}", desc="${car.description}", price="${car.price_bruto}", hasTitle=${!!titleElement}`);
-                logs.push(`📝 Car ${index} element text: ${element.textContent.slice(0, 200)}...`);
+                // FINAL DATA SUMMARY
+                logs.push(`📊 Car ${index} EXTRACTION SUMMARY:`);
+                logs.push(`   Make: ${car.make || 'N/A'}`);
+                logs.push(`   Description: ${car.description?.slice(0, 50) || 'N/A'}...`);
+                logs.push(`   Price: ${car.price_bruto || 'N/A'}€`);
+                logs.push(`   Mileage: ${car.mileage || 'N/A'}km`);
+                logs.push(`   Year: ${car.first_registration || 'N/A'}`);
+                logs.push(`   Power: ${car.power || 'N/A'}kW`);
+                logs.push(`   Fuel: ${car.fuel || 'N/A'}`);
+                logs.push(`   Transmission: ${car.gearbox || 'N/A'}`);
+                logs.push(`   Color: ${car.color || 'N/A'}`);
 
-                // Add car if it has a description (relaxed criteria for testing)
-                if (car.description && car.description.length > 5) {
+                // Add car if it has sufficient data
+                const hasEssentialData = car.description && car.description.length > 5;
+                if (hasEssentialData) {
                     cars.push(car);
-                    logs.push(`✅ Car ${index} ADDED - make: "${car.make}", desc: "${car.description.slice(0, 50)}...", price: "${car.price_bruto}"`);
+                    logs.push(`✅ Car ${index} ADDED TO RESULTS`);
                 } else {
-                    logs.push(`❌ Car ${index} REJECTED - make: "${car.make}", desc: "${car.description}", price: "${car.price_bruto}"`);
+                    logs.push(`❌ Car ${index} REJECTED - insufficient description`);
                 }
 
             } catch (error) {
