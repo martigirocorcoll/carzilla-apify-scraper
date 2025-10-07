@@ -136,6 +136,16 @@ Actor.main(async () => {
         });
         console.log('📄 Current page:', pageInfo);
 
+        // Take a screenshot for debugging
+        try {
+            const screenshot = await page.screenshot({ fullPage: false });
+            console.log('📸 Screenshot captured for debugging');
+            // Save screenshot to Apify key-value store
+            await Actor.setValue('page-screenshot.png', screenshot, { contentType: 'image/png' });
+        } catch (screenshotError) {
+            console.log('⚠️ Could not capture screenshot:', screenshotError.message);
+        }
+
         // Apply additional checkbox filters if needed
         const checkboxFilters = getCheckboxFilters({
             fuel, transmision, fourwheeldrive
@@ -160,11 +170,35 @@ Actor.main(async () => {
             const allDivs = document.querySelectorAll('div');
             const panelsAny = document.querySelectorAll('.panel');
 
+            // Try to find alternative selectors
+            const rows = document.querySelectorAll('.row');
+            const cards = document.querySelectorAll('.card, [class*="card"]');
+            const vehicles = document.querySelectorAll('[class*="vehicle"], [class*="fahrzeug"]');
+            const items = document.querySelectorAll('[class*="item"]');
+
+            // Check for "no results" message
+            const bodyText = document.body ? document.body.textContent : '';
+            const hasNoResults = bodyText.includes('Keine Fahrzeuge') ||
+                                 bodyText.includes('keine Ergebnisse') ||
+                                 bodyText.includes('Leider wurden');
+
+            // Get all unique class names to understand structure
+            const allClasses = new Set();
+            document.querySelectorAll('*').forEach(el => {
+                el.classList.forEach(cls => allClasses.add(cls));
+            });
+
             return {
                 panelDefaultCount: panels.length,
                 allDivsCount: allDivs.length,
                 panelAnyCount: panelsAny.length,
-                bodyHTML: document.body ? document.body.innerHTML.slice(0, 1000) : 'No body',
+                rowCount: rows.length,
+                cardCount: cards.length,
+                vehicleCount: vehicles.length,
+                itemCount: items.length,
+                hasNoResults: hasNoResults,
+                sampleClasses: Array.from(allClasses).slice(0, 50).join(', '),
+                bodyHTML: document.body ? document.body.innerHTML.slice(0, 2000) : 'No body',
                 hasContent: document.body ? document.body.textContent.length > 100 : false
             };
         });
