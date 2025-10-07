@@ -513,10 +513,23 @@ async function extractCarListings(page, options = {}) {
                     car.photo_url = imageElement.src;
                 }
 
-                // Create WhatsApp link with car details
-                const linkElement = element.querySelector('a[href*="fahrzeug"], a[href*="BMW"], a[href*="Mercedes"]');
-                const carInfo = encodeURIComponent(`${car.make || 'Car'} ${car.description || ''}`);
-                car.detail_url = `https://wa.me/34621339515?text=Información%20sobre%20${carInfo}%20de%20Carzilla.de`;
+                // Extract Carzilla detail URL
+                // Look for link to the specific car page
+                const linkElement = element.querySelector('a[href*="/fahrzeug/"], a[href*="/Fahrzeug/"], a.btn[href], h3 a[href], .panel-title a[href]');
+                if (linkElement && linkElement.href) {
+                    // Ensure it's a full URL
+                    let detailUrl = linkElement.href;
+                    if (detailUrl.startsWith('/')) {
+                        detailUrl = 'https://carzilla.de' + detailUrl;
+                    }
+                    car.detail_url = detailUrl;
+                    logs.push(`🔗 Car ${index}: Detail URL found: ${detailUrl}`);
+                } else {
+                    // Fallback: create WhatsApp link if no detail URL found
+                    const carInfo = encodeURIComponent(`${car.make || 'Car'} ${car.description || ''}`);
+                    car.detail_url = `https://wa.me/34621339515?text=Información%20sobre%20${carInfo}%20de%20Carzilla.de`;
+                    logs.push(`⚠️ Car ${index}: No detail URL found, using WhatsApp fallback`);
+                }
 
                 // Set source
                 car.source = 'apify';
@@ -532,6 +545,7 @@ async function extractCarListings(page, options = {}) {
                 logs.push(`   Fuel: ${car.fuel || 'N/A'}`);
                 logs.push(`   Transmission: ${car.gearbox || 'N/A'}`);
                 logs.push(`   Color: ${car.color || 'N/A'}`);
+                logs.push(`   Detail URL: ${car.detail_url || 'N/A'}`);
 
                 // Add car if it has sufficient data
                 const hasEssentialData = car.description && car.description.length > 5;
