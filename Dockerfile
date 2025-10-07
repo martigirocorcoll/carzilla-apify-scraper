@@ -8,6 +8,10 @@ COPY package*.json ./
 RUN npm ci --only=production --no-optional \
     && npm cache clean --force
 
+# Install Playwright browsers
+RUN npx playwright install chromium \
+    && npx playwright install-deps chromium
+
 # Copy source code
 COPY . ./
 
