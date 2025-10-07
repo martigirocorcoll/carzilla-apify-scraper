@@ -4,30 +4,49 @@
 const { BRAND_MAP, MODEL_MAP } = require('../final_complete_mappings.js');
 
 const FUEL_TYPE_MAPPING = {
+    // Standard format from Rails (importocoches.com)
+    'PETROL': '1',                   // Benzin (Petrol/Gasoline)
+    'DIESEL': '2',                   // Diesel
+    'LPG': '3',                      // Autogas/LPG
+    'CNG': '8',                      // Erdgas/CNG
+    'ELECTRICITY': '4',              // Elektro (Electric)
+    'HYBRID': '10',                  // PlugIn Hybrid-Benzin
+    'HYBRID_DIESEL': '11',           // PlugIn Hybrid-Diesel
+    'HYDROGENIUM': '12',             // Wasserstoff (Hydrogen)
+    'ETHANOL': null,                 // Not available on Carzilla
+    'OTHER': null,                   // Not available on Carzilla
+    // Spanish variants
     'Gasolina': '1',                 // Benzin dropdown value
-    'Benzin': '1',                   // Benzin dropdown value (German)
     'Diésel': '2',                   // Diesel dropdown value
-    'Diesel': '2',                   // Diesel dropdown value (German)
     'Gas de automoción': '3',        // Gas dropdown value
     'Gas natural': '8',              // Erdgas dropdown value
     'Eléctrico': '4',                // Elektro dropdown value
-    'Elektro': '4',                  // Elektro dropdown value (German)
     'Híbrido (gasolina/eléctrico)': '10',     // PlugIn Hybrid-Benzin
     'Híbrido (diésel/eléctrico)': '11',       // PlugIn Hybrid-Diesel
-    'Hybrid': '5',                   // Standard Hybrid dropdown value
     'Hidrógeno': '12',               // Wasserstoff dropdown value
     'Etanol (FFV,E85, etc.)': null,  // Not available on Carzilla
-    'Otro': null                     // Not available on Carzilla
+    'Otro': null,                    // Not available on Carzilla
+    // German variants
+    'Benzin': '1',                   // Benzin dropdown value (German)
+    'Diesel': '2',                   // Diesel dropdown value (German)
+    'Elektro': '4',                  // Elektro dropdown value (German)
+    'Hybrid': '5'                    // Standard Hybrid dropdown value
 };
 
 const TRANSMISSION_MAPPING = {
+    // From importocoches.com Rails app
+    'MANUAL_GEAR': 'tm-1',           // Manual transmission
+    'AUTOMATIC_GEAR': 'tm-2',        // Automatic transmission
+    'SEMIAUTOMATIC_GEAR': 'tm-3',    // Tiptronic/Semi-automatic
+    // Spanish variants
     'Manual': 'tm-1',                // Schaltgetriebe checkbox
     'manual': 'tm-1',                // Schaltgetriebe checkbox (lowercase)
-    'Schaltgetriebe': 'tm-1',        // Schaltgetriebe checkbox (German)
     'Automático': 'tm-2',            // Automatik checkbox
     'automatico': 'tm-2',            // Automatik checkbox (lowercase)
-    'Automatik': 'tm-2'              // Automatik checkbox (German)
-    // Note: Carzilla also has 'tm-3' for Tiptronic
+    // German variants
+    'Schaltgetriebe': 'tm-1',        // Schaltgetriebe checkbox (German)
+    'Automatik': 'tm-2',             // Automatik checkbox (German)
+    'Tiptronic': 'tm-3'              // Tiptronic checkbox (German)
 };
 
 // Vehicle condition mapping (Estado in Spanish)
