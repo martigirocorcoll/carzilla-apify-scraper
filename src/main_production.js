@@ -35,13 +35,10 @@ Actor.main(async () => {
     console.log('🔍 Search support check:', supportCheck);
 
     if (!supportCheck.supported) {
-        console.log('❌ Search not supported, returning empty results');
+        console.log('❌ Search not supported, returning error');
         await Actor.pushData({
-            items: [],
-            total: "0",
-            max_pages: 1,
-            endpoint: "apify://unsupported-search",
-            error: supportCheck.reason,
+            error: true,
+            error_message: supportCheck.reason,
             alternatives: supportCheck.alternativeBrands
         });
         return;
@@ -71,12 +68,10 @@ Actor.main(async () => {
     });
 
     if (!searchUrl) {
-        console.log('❌ Could not build search URL, returning empty results');
+        console.log('❌ Could not build search URL');
         await Actor.pushData({
-            items: [],
-            total: "0",
-            max_pages: 1,
-            endpoint: "apify://invalid-url"
+            error: true,
+            error_message: "Could not build valid search URL"
         });
         return;
     }
@@ -191,35 +186,29 @@ Actor.main(async () => {
         const elapsed = Date.now() - startTime;
         console.log(`⏱️ Execution time: ${elapsed}ms`);
 
-        // Save results in importocoches.com format
-        await Actor.pushData({
-            items: results,
-            total: results.length.toString(),
-            max_pages: 1,
-            endpoint: `apify://carzilla-${Date.now()}`,
-            search_url: searchUrl,
-            execution_time_ms: elapsed,
-            parameters_used: {
-                make: mappedMake,
-                model: mappedModel,
-                price_range: { min: price_min, max: price_max },
-                filters_applied: checkboxFilters.length
-            }
-        });
+        // Save each car as a separate item in the dataset
+        for (const car of results) {
+            await Actor.pushData(car);
+        }
 
-        console.log('✅ Scraping completed successfully');
+        console.log(`✅ Scraping completed successfully - ${results.length} cars saved to dataset`);
 
     } catch (error) {
         console.error('❌ Error during scraping:', error);
 
-        // Return partial results with error info
+        // Save partial results if any
+        if (results.length > 0) {
+            console.log(`⚠️ Saving ${results.length} partial results before exit`);
+            for (const car of results) {
+                await Actor.pushData(car);
+            }
+        }
+
+        // Also save error info as a separate item
         await Actor.pushData({
-            items: results,
-            total: results.length.toString(),
-            max_pages: 1,
-            endpoint: `apify://carzilla-error-${Date.now()}`,
-            error: error.message,
-            partial_results: results.length > 0
+            error: true,
+            error_message: error.message,
+            partial_results_count: results.length
         });
 
     } finally {
