@@ -249,7 +249,7 @@ async function extractCarListings(page, options = {}) {
                 if (titleElement) {
                     // Clean up title text more aggressively
                     let fullTitle = titleElement.textContent || titleElement.innerText || '';
-                    fullTitle = fullTitle.replace(/\\n/g, ' ').replace(/\\t/g, ' ').replace(/\\s+/g, ' ').trim();
+                    fullTitle = fullTitle.replace(/\n/g, ' ').replace(/\t/g, ' ').replace(/\s+/g, ' ').trim();
 
                     if (fullTitle) {
                         car.make = opts.make || 'Audi';  // Use passed make
@@ -300,7 +300,7 @@ async function extractCarListings(page, options = {}) {
                     const priceElements = element.querySelectorAll(selector);
                     for (const priceEl of priceElements) {
                         const priceText = priceEl.textContent || priceEl.getAttribute('data-price') || '';
-                        const priceMatch = priceText.match(/(\\d{1,3}(?:[.,]\\d{3})*(?:[.,]\\d{2})?)\\s*€?/);
+                        const priceMatch = priceText.match(/(\d{1,3}(?:[.,]\d{3})*(?:[.,]\d{2})?)\s*€?/);
                         if (priceMatch) {
                             const cleanPrice = priceMatch[1].replace(/[.,]/g, '');
                             const price = parseInt(cleanPrice);
@@ -317,10 +317,10 @@ async function extractCarListings(page, options = {}) {
                 // Strategy 4: Pattern matching in innerHTML if no specific elements found
                 if (!foundPrice) {
                     const htmlPricePatterns = [
-                        />\\s*(\\d{1,3}[.,]\\d{3})\\s*€/g,         // >34.440 €
-                        /€\\s*(\\d{1,3}[.,]\\d{3})\\s*</g,         // € 34.440 <
-                        /Preis[^>]*>(\\d{1,3}[.,]\\d{3})/gi,       // Preis>34440
-                        /price[^>]*>(\\d{1,3}[.,]\\d{3})/gi        // price>34440
+                        />\s*(\d{1,3}[.,]\d{3})\s*€/g,         // >34.440 €
+                        /€\s*(\d{1,3}[.,]\d{3})\s*</g,         // € 34.440 <
+                        /Preis[^>]*>(\d{1,3}[.,]\d{3})/gi,       // Preis>34440
+                        /price[^>]*>(\d{1,3}[.,]\d{3})/gi        // price>34440
                     ];
 
                     for (let i = 0; i < htmlPricePatterns.length; i++) {
@@ -366,10 +366,10 @@ async function extractCarListings(page, options = {}) {
                 // EXPERT MILEAGE EXTRACTION
                 let foundMileage = null;
                 const mileagePatterns = [
-                    /(\\d{1,3}[.,]?\\d{3})\\s*km/gi,           // 45.000 km, 45,000 km
-                    /(\\d{4,6})\\s*km/gi,                      // 45000 km
-                    /Kilometerstand[^>]*>(\\d{1,3}[.,]?\\d{3})/gi, // Kilometerstand>45000
-                    /km[^>]*>(\\d{1,3}[.,]?\\d{3})/gi          // km>45000
+                    /(\d{1,3}[.,]?\d{3})\s*km/gi,           // 45.000 km, 45,000 km
+                    /(\d{4,6})\s*km/gi,                      // 45000 km
+                    /Kilometerstand[^>]*>(\d{1,3}[.,]?\d{3})/gi, // Kilometerstand>45000
+                    /km[^>]*>(\d{1,3}[.,]?\d{3})/gi          // km>45000
                 ];
 
                 // Try visible text first
@@ -407,11 +407,11 @@ async function extractCarListings(page, options = {}) {
                 // EXPERT YEAR/REGISTRATION EXTRACTION
                 let foundYear = null;
                 const yearPatterns = [
-                    /EZ[^>]*?(\\d{2})\\/(\\d{4})/gi,           // EZ 12/2023
-                    /EZ[^>]*?(\\d{4})/gi,                      // EZ 2023
-                    /Erstzulassung[^>]*?(\\d{4})/gi,          // Erstzulassung 2023
-                    /(\\d{2})\\/(\\d{4})/g,                   // 12/2023
-                    /Jahr[^>]*?(\\d{4})/gi                    // Jahr 2023
+                    /EZ[^>]*?(\d{2})\/(\d{4})/gi,           // EZ 12/2023
+                    /EZ[^>]*?(\d{4})/gi,                      // EZ 2023
+                    /Erstzulassung[^>]*?(\d{4})/gi,          // Erstzulassung 2023
+                    /(\d{2})\/(\d{4})/g,                   // 12/2023
+                    /Jahr[^>]*?(\d{4})/gi                    // Jahr 2023
                 ];
 
                 for (const pattern of yearPatterns) {
@@ -430,9 +430,9 @@ async function extractCarListings(page, options = {}) {
                 // EXPERT POWER EXTRACTION
                 let foundPower = null;
                 const powerPatterns = [
-                    /(\\d{2,3})\\s*kW/gi,                     // 150 kW
-                    /(\\d{2,3})\\s*PS/gi,                     // 204 PS (convert to kW)
-                    /Leistung[^>]*?(\\d{2,3})\\s*kW/gi        // Leistung 150 kW
+                    /(\d{2,3})\s*kW/gi,                     // 150 kW
+                    /(\d{2,3})\s*PS/gi,                     // 204 PS (convert to kW)
+                    /Leistung[^>]*?(\d{2,3})\s*kW/gi        // Leistung 150 kW
                 ];
 
                 for (const pattern of powerPatterns) {
