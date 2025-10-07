@@ -151,6 +151,7 @@ function buildCarzillaURL(params) {
     }
 
     // Fuel type - support multiple values
+    // DEFAULT: If no fuel type specified, show only electric and hybrid cars
     if (fuel) {
         const fuelTypes = Array.isArray(fuel) ? fuel : [fuel];
         fuelTypes.forEach(fuelType => {
@@ -158,6 +159,12 @@ function buildCarzillaURL(params) {
                 url += `&mt=${FUEL_TYPE_MAPPING[fuelType]}`;
             }
         });
+    } else {
+        // No fuel specified: default to electric and hybrid cars only
+        url += `&mt=4`;   // ELECTRICITY
+        url += `&mt=10`;  // HYBRID (petrol)
+        url += `&mt=11`;  // HYBRID_DIESEL
+        console.log('ℹ️ No fuel type specified - defaulting to electric and hybrid vehicles only');
     }
 
     // Transmission - add directly to URL as filter parameter

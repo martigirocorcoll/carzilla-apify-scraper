@@ -138,5 +138,19 @@ console.log('   URL:', url6);
 printFilters(parseUrl(url6));
 console.log('   Checkbox filters:', getCheckboxFilters(testParams6));
 
+// Test case 7: No fuel type specified (should default to electric + hybrid)
+const testParams7 = {
+    "make": "BMW",
+    "model": "320"
+};
+
+console.log('\n7️⃣  BMW 320 without fuel filter (should default to electric+hybrid):');
+console.log('   Input:', JSON.stringify(testParams7, null, 2));
+const mappedMake7 = mapBrandName(testParams7.make);
+const mappedModel7 = mapModelName(testParams7.make, testParams7.model);
+const url7 = buildCarzillaURL({ ...testParams7, make: mappedMake7, model: mappedModel7 });
+console.log('   URL:', url7);
+printFilters(parseUrl(url7));
+
 console.log('\n' + '='.repeat(80));
 console.log('✅ Filter tests completed!\n');
