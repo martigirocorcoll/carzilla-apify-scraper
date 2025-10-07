@@ -284,10 +284,28 @@ async function extractCarListings(page, options = {}) {
                     '[data-price]', '[data-cost]', '.price', '.preis', '.betrag', '.kosten'
                 ];
 
-                // Try specific price elements first
+                // Try specific price elements first - filter out strikethrough/old prices
                 for (const selector of priceSelectors) {
                     const priceElements = element.querySelectorAll(selector);
                     for (const priceEl of priceElements) {
+                        // Skip elements that are strikethrough, old prices, or savings text
+                        const style = window.getComputedStyle(priceEl);
+                        const text = priceEl.textContent || '';
+                        const parentText = priceEl.parentElement ? priceEl.parentElement.textContent : '';
+
+                        // Skip if:
+                        // - Has strikethrough text decoration
+                        // - Contains "UPE", "sparen", "Ersparnis" (savings text)
+                        // - Parent contains "sparen" or "Ersparnis"
+                        if (style.textDecoration.includes('line-through') ||
+                            text.includes('UPE') ||
+                            text.includes('sparen') ||
+                            text.includes('Ersparnis') ||
+                            parentText.includes('sparen') ||
+                            parentText.includes('Sie sparen')) {
+                            continue;
+                        }
+
                         const priceText = priceEl.textContent || priceEl.getAttribute('data-price') || '';
                         const priceMatch = priceText.match(/(\d{1,3}(?:[.,]\d{3})*(?:[.,]\d{2})?)\s*€?/);
                         if (priceMatch) {
@@ -305,22 +323,31 @@ async function extractCarListings(page, options = {}) {
 
                 // Strategy 4: Pattern matching in innerHTML if no specific elements found
                 if (!foundPrice) {
-                    const htmlPricePatterns = [
-                        />\s*(\d{1,3}[.,]\d{3})\s*€/g,         // >34.440 €
-                        /€\s*(\d{1,3}[.,]\d{3})\s*</g,         // € 34.440 <
-                        /Preis[^>]*>(\d{1,3}[.,]\d{3})/gi,       // Preis>34440
-                        /price[^>]*>(\d{1,3}[.,]\d{3})/gi        // price>34440
-                    ];
+                    // First, extract all prices from the HTML
+                    const allPricesPattern = /(\d{1,3}[.,]\d{3})\s*€/g;
+                    const allMatches = [...innerHTML.matchAll(allPricesPattern)];
 
-                    for (let i = 0; i < htmlPricePatterns.length; i++) {
-                        const pattern = htmlPricePatterns[i];
-                        const match = innerHTML.match(pattern);
-                        if (match) {
+                    if (allMatches.length > 0) {
+                        // Filter out prices that appear in UPE or sparen context
+                        for (const match of allMatches) {
+                            const matchIndex = match.index;
+                            const contextBefore = innerHTML.slice(Math.max(0, matchIndex - 100), matchIndex);
+                            const contextAfter = innerHTML.slice(matchIndex, matchIndex + 100);
+
+                            // Skip if in UPE or savings context
+                            if (contextBefore.includes('UPE') ||
+                                contextBefore.includes('sparen') ||
+                                contextBefore.includes('Ersparnis') ||
+                                contextAfter.includes('sparen')) {
+                                logs.push(`⚠️ Car ${index}: Skipping price ${match[1]}€ (in UPE/savings context)`);
+                                continue;
+                            }
+
                             const cleanPrice = match[1].replace(/[.,]/g, '');
                             const price = parseInt(cleanPrice);
                             if (price > 1000 && price < 500000) {
                                 foundPrice = price;
-                                logs.push(`💰 Car ${index}: HTML pattern ${i} found price: ${foundPrice}€`);
+                                logs.push(`💰 Car ${index}: HTML pattern found valid price: ${foundPrice}€`);
                                 break;
                             }
                         }
